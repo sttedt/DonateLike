@@ -4,7 +4,7 @@
 <%@ page session="true"%>
 		<div style="text-align: center;">
 			<a style="color: black; font-size:26pt; text-decoration: none; display: inline-block; margin-top: 10px; margin-left: 50px;" href="main">
-			<i class="fas fa-puzzle-piece"> 기부니좋아</i></a>
+			<i class="fas fa-puzzle-piece"> 기부니 좋아</i></a>
 			<a class="nav-link fas fa-user" href="login" id="dropLogin" data-toggle="dropdown" aria-haspopup="true"
 				aria-expanded="false" style="float: right; font-size: 30px; margin-top: 10px; margin-right: 50px; text-decoration:none; color: #000;">
 			</a>
