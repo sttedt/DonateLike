@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="member">
+<mapper namespace="donate_member">
 
-
+	<insert id="joinInsert">
+		INSERT INTO donate_member (DM_NO, DM_ID, DM_NAME, DM_PW )
+		VALUES (#{DM_NO}, #{DM_ID}, #{DM_NAME}, #{DM_PW} )
+	</insert>
 
 
 </mapper>
