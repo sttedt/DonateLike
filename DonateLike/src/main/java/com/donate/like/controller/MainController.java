@@ -16,10 +16,22 @@ public class MainController {
 	public String main( Model model) {
 		return "main";
 	}
-	
+//	기부니 좋아 소개
 	@RequestMapping(value = "/DonateLike_Introduce", method = RequestMethod.GET)
 	public String DonateLike_Introduce(Model model) {
 		
 		return "DonateLike_Introduce";
+	}
+//	기부니 좋아 목표와 비전
+	@RequestMapping(value = "/DonateLike_purpose", method = RequestMethod.GET)
+	public String DonateLike_purpose(Model model) {
+		
+		return "DonateLike_purpose";
+	}
+//	기부니 좋아 대상선정
+	@RequestMapping(value = "/DonateLike_TargetSelection", method = RequestMethod.GET)
+	public String DonateLike_TargetSelection(Model model) {
+		
+		return "DonateLike_TargetSelection";
 	}
 }

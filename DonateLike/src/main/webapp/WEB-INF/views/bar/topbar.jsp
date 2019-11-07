@@ -18,13 +18,13 @@
 					<li><a href="#">소개</a>
 						<ul>
 							<li><a href="DonateLike_Introduce">사이트소개</a></li>
-							<li><a href="#">목표와 비전</a></li>
+							<li><a href="DonateLike_purpose">목표와 비전</a></li>
 						</ul>
 					</li>
 					<li>
 						<a href="#" id="current">후원하기</a>
 						<ul>
-							<li><a href="#">대상선정</a></li>
+							<li><a href="DonateLike_TargetSelection">대상선정</a></li>
 							<li><a href="#">정기후원</a></li>
 							<li><a href="#">일시후원</a></li>
 						</ul>

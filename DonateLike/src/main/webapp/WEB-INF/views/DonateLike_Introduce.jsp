@@ -14,7 +14,7 @@
 	<!-- 상단바 -->
 	<jsp:include page="bar/topbar.jsp"></jsp:include>
 	<!-- 목차? 상위목록 표시 -->
-	<div style="text-align: right;">
+	<div style="text-align: right; margin-right: 20px">
 		<a href="main" style="color:black; text-decoration: none;">Home</a> > <a href="DonateLike_Introduce" style="color:black; text-decoration: none;">기부니 좋아 소개</a>	
 	</div>
 	
