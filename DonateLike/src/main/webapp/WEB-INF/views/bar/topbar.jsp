@@ -17,7 +17,7 @@
 				<ul>
 					<li><a href="#">소개</a>
 						<ul>
-							<li><a href="#">사이트소개</a></li>
+							<li><a href="DonateLike_Introduce">사이트소개</a></li>
 							<li><a href="#">목표와 비전</a></li>
 						</ul>
 					</li>
