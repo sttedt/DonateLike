@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="true" %>
-<html>
 <head>
 <meta charset="UTF-8">
 	<title>DonateLike</title>
@@ -50,14 +49,12 @@
 			</tbody>
 		</table>
 		<div>
-			<a href="boardw" class="btn btn-dark">글쓰기</a>
+			<a href="DonateLike_Board_insert" class="btn btn-dark">글쓰기</a>
 		</div>
 	</div>
 	
-	
-	
 	<!-- 하단바 -->
-<jsp:include page="bar/footer.jsp"></jsp:include>	
+	<jsp:include page="bar/footer.jsp"></jsp:include>	
 </body>
 <script src='resources/js/jquery-3.3.1.min.js'></script>
 <script src="resources/js/popper.min.js"></script>
@@ -75,4 +72,3 @@
 		$('#target').DataTable()
 	})
 </script>
-</html>

@@ -16,5 +16,9 @@ public class BoardService {
 	public List<Map<String, Object>> boardList() {
 		return boardDao.boardList();
 	}
+	// 게시판 글쓰기
+	public void boardInsert(Map<String, Object> map) {
+		boardDao.boardInsert(map);
+	}
 
 }

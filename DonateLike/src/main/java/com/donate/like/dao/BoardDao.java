@@ -15,4 +15,8 @@ public class BoardDao {
 	public List<Map<String, Object>> boardList() {
 		return sessionTemplate.selectList("board.boardList");
 	}
+	// 게시판 글쓰기
+	public int boardInsert(Map<String, Object> map) {
+		return sessionTemplate.insert("board.boardInsert", map);
+	}
 }

@@ -7,9 +7,9 @@
 <meta charset="UTF-8">
 	<title>DonateLike</title>
 	<link rel="stylesheet" href="resources/css/bootstrap.css" />
-	<link rel="stylesheet" href="resources/css/donateLike.css" />
+	<link rel="stylesheet" href="resources/css/donateLike.css?ver=1" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
-<!-- 전체 임시 css -->
+	<!-- 전체 임시 css -->
 	<style type="text/css">
 	
 	</style>
@@ -17,19 +17,26 @@
 <body>
 	<!-- 상단바 -->
 	<jsp:include page="bar/topbar.jsp"></jsp:include>
+<!-- 게시판글쓰기 시작 -->
+	<div class="container">
+		<form action="DonateLike_Board_insert" method = "post">
+			<div>
+				<h3 style="text-align: center;">
+					Q&A 글쓰기
+				</h3>
+				<hr>
+			</div>	
+			제목 :<br /> 
+			<input type="text" name="title" class="form-control"/>
+			<br />
+			내용 : <textarea rows="6" name="content" class="form-control"></textarea>
+			<br /> 
+			작성자 :<input type="text" name="dm_id" value="${sessionScope.SID}" class="form-control" readonly="readonly"/>
+			<br />
+			<input type="submit" value="글쓰기" class="btn btn-primary"/>
+		</form>
+	</div>
 	
-	<!-- 목차? 상위목록 표시 -->
-	<div style="text-align: right;  margin-right: 20px">
-		<a href="main" style="color:black; text-decoration: none;">Home</a> > <a href="DonateLike_Introduce" style="color:black; text-decoration: none;">목표와 비전</a>	
-	</div>
-	<!-- 소개시작 -->
-	<h1 style="text-align: center;">목표와 비전</h1>
-	<br/>
-	<h5 style="text-align: center;"> 블록체인을 통한 투명한 기부 문화를 지향합니다.</h5>
-	<br/>
-	<div style="text-align: center;">
-		<img src="resources/img/purpose.jpg">
-	</div>
 	<!-- 하단바 -->
 	<jsp:include page="bar/footer.jsp"></jsp:include>	
 </body>

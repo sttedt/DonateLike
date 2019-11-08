@@ -6,5 +6,9 @@
 	<select id="boardList" resultType="map">
 		SELECT * FROM DONATE_BOARD ORDER BY B_NO DESC
 	</select>
-	
+	<!-- 게시글 DB 저장 -->
+	<insert id="boardinsert">
+		INSERT INTO donate_board (B_TITLE, B_CONTENT, B_DATE, DM_ID) 
+		VALUES(#{title},#[content},NOW(),#{dm_id})
+	</insert>
 </mapper>
