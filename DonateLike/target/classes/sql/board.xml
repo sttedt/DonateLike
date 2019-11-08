@@ -7,8 +7,8 @@
 		SELECT * FROM DONATE_BOARD ORDER BY B_NO DESC
 	</select>
 	<!-- 게시글 DB 저장 -->
-	<insert id="boardinsert">
+	<insert id="boardInsert">
 		INSERT INTO donate_board (B_TITLE, B_CONTENT, B_DATE, DM_ID) 
-		VALUES(#{title},#[content},NOW(),#{dm_id})
+		VALUES(#{title},#{content},NOW(),#{dm_id})
 	</insert>
 </mapper>

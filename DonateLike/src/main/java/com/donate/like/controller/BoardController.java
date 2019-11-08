@@ -43,10 +43,10 @@ public class BoardController {
 	// 게시글 데이터베이스 저장
 	@RequestMapping(value="DonateLike_Board_insert", method = RequestMethod.POST)
 	public String DonateLike_Board_insert(@RequestParam Map<String, Object> map) {
-		boardService.boardInsert(map);
 		System.out.println(" map :" + map);
+		boardService.boardInsert(map);
 		
-		return "redirect:board";
+		return "redirect:DonateLike_Board";
 	}
 
 }
