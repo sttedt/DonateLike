@@ -3,9 +3,14 @@
 <mapper namespace="donate_member">
 
 	<insert id="joinInsert">
-		INSERT INTO donate_member (DM_NO, DM_ID, DM_NAME, DM_PW )
-		VALUES (#{DM_NO}, #{DM_ID}, #{DM_NAME}, #{DM_PW} )
+		INSERT INTO donate_member ( DM_ID, DM_NAME, DM_PW )
+		VALUES (#{DM_ID}, #{DM_NAME}, #{DM_PW} )
 	</insert>
+	
+	<select id="loginSelect" resultType="map" parameterType="map">
+		SELECT * FROM donate_member 
+		WHERE DM_ID=#{id} AND DM_PW=#{pw}
+	</select>
 
 
 </mapper>

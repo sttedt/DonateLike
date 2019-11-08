@@ -17,7 +17,10 @@ public class MemberService {
 	public void joinInsert(Map<String, Object> map) {
 		memberDao.joinInsert(map);
 	}
-	
+	// 로그인 처리
+	public Map<String, Object> loginSelect(Map<String, Object> map) {
+		return memberDao.loginSelect(map);
+	}
 	
 
 }

@@ -20,7 +20,7 @@
 			<c:if test="${sessionScope.SID ne null}">
 				<div class="dropdown-menu" aria-labelledby="dropLogin">
 					<a class="dropdown-item" href="#">${sessionScope.SID} 님</a> 
-					<a class="dropdown-item" href="join">로그아웃</a> 
+					<a class="dropdown-item" href="logout">로그아웃</a> 
 					<a class="dropdown-item" href="DonateLike_Board">문의하기</a> 
 				</div>		
 			</c:if>
@@ -28,7 +28,7 @@
 			<c:if test="${sessionScope.SID eq admin}">
 				<div class="dropdown-menu" aria-labelledby="dropLogin">
 					<a class="dropdown-item" href="#">관리자 님</a> 
-					<a class="dropdown-item" href="join">로그아웃</a> 
+					<a class="dropdown-item" href="logout">로그아웃</a> 
 					<a class="dropdown-item" href="board">수혜자 관리</a> 
 					<a class="dropdown-item" href="DonateLike_Board">문의게시판</a> 
 				</div>		
