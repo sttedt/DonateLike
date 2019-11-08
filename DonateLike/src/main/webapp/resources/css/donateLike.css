@@ -1,4 +1,5 @@
-	.menubar{
+		/* 드롭다운 메뉴 css */
+		.menubar{
 		border:none;
 		border:0px;
 		margin:0px;
@@ -89,6 +90,8 @@
 		.menubar p{
 		clear:left;
 		}
+		
+		
 		/* 	소개 페이지 카드 센터 설정 */
 		.DonateLike_Card_Center{
 			width: 100%;
@@ -97,4 +100,33 @@
 			margin-right: auto;
 			margin-left: auto;
 			max-width: 1190px;
+		}
+		
+		
+		/*  대상선정 탭 css */
+		ul.tabs{
+			margin: 0px;
+			padding: 0px;
+			list-style: none;
+		}
+		ul.tabs li{
+			background: none;
+			color: #222;
+			display: inline-block;
+			padding: 10px 15px;
+			cursor: pointer;
+		}
+		 
+		ul.tabs li.current{
+			background: #ededed;
+			color: #222;
+		}
+		 
+		.tab-content{
+			display: none;
+			padding: 15px;
+		}
+		 
+		.tab-content.current{
+			display: inherit;
 		}

@@ -9,39 +9,9 @@
 	<link rel="stylesheet" href="resources/css/bootstrap.css" />
 	<link rel="stylesheet" href="resources/css/donateLike.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+	<!-- 전체 임시 css -->
 	<style type="text/css">
-		body{
-			margin-top: 100px;
-			font-family: 'Trebuchet MS', serif;
-			line-height: 1.6
-		}
-		ul.tabs{
-			margin: 0px;
-			padding: 0px;
-			list-style: none;
-		}
-		ul.tabs li{
-			background: none;
-			color: #222;
-			display: inline-block;
-			padding: 10px 15px;
-			cursor: pointer;
-		}
-		 
-		ul.tabs li.current{
-			background: #ededed;
-			color: #222;
-		}
-		 
-		.tab-content{
-			display: none;
-			background: #ededed;
-			padding: 15px;
-		}
-		 
-		.tab-content.current{
-			display: inherit;
-		}
+		
 	</style>
 </head>
 <body>
@@ -54,13 +24,16 @@
 	<h5 style="text-align: center;"> 기부가 필요한 우리 이웃들에게 희망을 선물해주세요!</h5>
 	<br/>
 	
-	<div class="DonateLike_Card_Center">
+	
+	<div class="DonateLike_Card_Center" style="max-width: 1220px;">
 		<ul class="tabs">
-			<li class="tab-link current" data-tab="tab-1">메뉴_하나</li>
-			<li class="tab-link" data-tab="tab-2">메뉴_둘</li>
-			<li class="tab-link" data-tab="tab-3">메뉴_셋</li>
+			<li class="tab-link current" data-tab="tab-1">전체</li>
+			<li class="tab-link" data-tab="tab-2">국내 장애아동</li>
+			<li class="tab-link" data-tab="tab-3">국내 위기가정</li>
+			<li class="tab-link" data-tab="tab-4">국내 독거노인</li>
+			<li class="tab-link" data-tab="tab-5">국내 수재민</li>
 		</ul>
-		<!--  첫번째 탭 -->
+		<!-- 전체 -->
 		<div id="tab-1" class="tab-content current">
 			<div class="card-deck mb-3 " id="div_left" >
 				<a href="" style="margin-left: 10px;">
@@ -72,45 +45,9 @@
 							</p>
 					</div>		
 				</a>
-				<a href="" style="margin-left: 10px;">
-					<div class="card mb-4 scale" >
-							<img class="card-img-top" src="" style= "height: 280px; width: 350px;"/>
-							<p class="card-header" style= "width: 350px; text-align: center; background:white;">
-								<span style="color:black; text-decoration: none;">aaaaaaaaa</span><br/>
-								<span style="color:black; text-decoration: none;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><br/>
-							</p>
-					</div>		
-				</a>
-				<a href="" style="margin-left: 10px;">
-					<div class="card mb-4 scale" >
-							<img class="card-img-top" src="" style= "height: 280px; width: 350px;"/>
-							<p class="card-header" style= "width: 350px; text-align: center; background:white;">
-								<span style="color:black; text-decoration: none;">aaaaaaaaa</span><br/>
-								<span style="color:black; text-decoration: none;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><br/>
-							</p>
-					</div>		
-				</a>
-				<a href="" style="margin-left: 10px;">
-					<div class="card mb-4 scale" >
-							<img class="card-img-top" src="" style= "height: 280px; width: 350px;"/>
-							<p class="card-header" style= "width: 350px; text-align: center; background:white;">
-								<span style="color:black; text-decoration: none;">aaaaaaaaa</span><br/>
-								<span style="color:black; text-decoration: none;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><br/>
-							</p>
-					</div>		
-				</a>
-				<a href="" style="margin-left: 10px;">
-					<div class="card mb-4 scale" >
-							<img class="card-img-top" src="" style= "height: 280px; width: 350px;"/>
-							<p class="card-header" style= "width: 350px; text-align: center; background:white;">
-								<span style="color:black; text-decoration: none;">aaaaaaaaa</span><br/>
-								<span style="color:black; text-decoration: none;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><br/>
-							</p>
-					</div>		
-				</a>
 			</div>
 		</div>
-		<!--   두번째 탭 -->
+		<!-- 국내 장애아동 -->
 		<div id="tab-2" class="tab-content">
 			<div class="card-deck mb-3 " id="div_left" >
 				<a href="" style="margin-left: 10px;">
@@ -122,45 +59,9 @@
 							</p>
 					</div>		
 				</a>
-				<a href="" style="margin-left: 10px;">
-					<div class="card mb-4 scale" >
-							<img class="card-img-top" src="" style= "height: 280px; width: 350px;"/>
-							<p class="card-header" style= "width: 350px; text-align: center; background:white;">
-								<span style="color:black; text-decoration: none;">bbbbbbbbbbbbbb</span><br/>
-								<span style="color:black; text-decoration: none;">bbbbbbbbbbbbbbbbbb</span><br/>
-							</p>
-					</div>		
-				</a>
-				<a href="" style="margin-left: 10px;">
-					<div class="card mb-4 scale" >
-							<img class="card-img-top" src="" style= "height: 280px; width: 350px;"/>
-							<p class="card-header" style= "width: 350px; text-align: center; background:white;">
-								<span style="color:black; text-decoration: none;">bbbbbbbbbbbbbbbbb</span><br/>
-								<span style="color:black; text-decoration: none;">bbbbbbbbbbbbbbbbbbbbbbbb</span><br/>
-							</p>
-					</div>		
-				</a>
-				<a href="" style="margin-left: 10px;">
-					<div class="card mb-4 scale" >
-							<img class="card-img-top" src="" style= "height: 280px; width: 350px;"/>
-							<p class="card-header" style= "width: 350px; text-align: center; background:white;">
-								<span style="color:black; text-decoration: none;">aaaaaaaaa</span><br/>
-								<span style="color:black; text-decoration: none;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><br/>
-							</p>
-					</div>		
-				</a>
-				<a href="" style="margin-left: 10px;">
-					<div class="card mb-4 scale" >
-							<img class="card-img-top" src="" style= "height: 280px; width: 350px;"/>
-							<p class="card-header" style= "width: 350px; text-align: center; background:white;">
-								<span style="color:black; text-decoration: none;">bbbbbbbbbbbbbbbbbbbbb</span><br/>
-								<span style="color:black; text-decoration: none;">bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</span><br/>
-							</p>
-					</div>		
-				</a>
 			</div>
 		</div>
-		<!--   세번째 탭 -->
+		<!-- 국내 위기가정 -->
 		<div id="tab-3" class="tab-content">
 			<div class="card-deck mb-3 " id="div_left" >
 				<a href="" style="margin-left: 10px;">
@@ -172,39 +73,31 @@
 						</p>
 					</div>		
 				</a>
+			</div>
+		</div>
+		<!-- 국내 독거노인 -->
+		<div id="tab-4" class="tab-content">
+			<div class="card-deck mb-3 " id="div_left" >
 				<a href="" style="margin-left: 10px;">
 					<div class="card mb-4 scale" >
 						<img class="card-img-top" src="" style= "height: 280px; width: 350px;"/>
 						<p class="card-header" style= "width: 350px; text-align: center; background:white;">
-							<span style="color:black; text-decoration: none;">ccccccccccccccccccc</span><br/>
-							<span style="color:black; text-decoration: none;">ccccccccccccccccccccccccccccccccccccc</span><br/>
+							<span style="color:black; text-decoration: none;">dddddddddddddddddddd</span><br/>
+							<span style="color:black; text-decoration: none;">ddddddddddddddddddddddddddddddddddddddddddd</span><br/>
 						</p>
 					</div>		
 				</a>
+			</div>
+		</div>
+			<!-- 국내 수재민 -->
+		<div id="tab-5" class="tab-content">
+			<div class="card-deck mb-3 " id="div_left" >
 				<a href="" style="margin-left: 10px;">
 					<div class="card mb-4 scale" >
 						<img class="card-img-top" src="" style= "height: 280px; width: 350px;"/>
 						<p class="card-header" style= "width: 350px; text-align: center; background:white;">
-							<span style="color:black; text-decoration: none;">cccccccccccccccccc</span><br/>
-							<span style="color:black; text-decoration: none;">cccccccccccccccccccccccccccccccccccccc</span><br/>
-						</p>
-					</div>		
-				</a>
-				<a href="" style="margin-left: 10px;">
-					<div class="card mb-4 scale" >
-						<img class="card-img-top" src="" style= "height: 280px; width: 350px;"/>
-						<p class="card-header" style= "width: 350px; text-align: center; background:white;">
-							<span style="color:black; text-decoration: none;">ccccccccccccccccccccc</span><br/>
-							<span style="color:black; text-decoration: none;">ccccccccccccccccccccccccccccccccccccc</span><br/>
-						</p>
-					</div>		
-				</a>
-				<a href="" style="margin-left: 10px;">
-					<div class="card mb-4 scale" >
-						<img class="card-img-top" src="" style= "height: 280px; width: 350px;"/>
-						<p class="card-header" style= "width: 350px; text-align: center; background:white;">
-							<span style="color:black; text-decoration: none;">ccccccccccccccccccccccc</span><br/>
-							<span style="color:black; text-decoration: none;">ccccccccccccccccccccccccccccccccccccccccc</span><br/>
+							<span style="color:black; text-decoration: none;">eeeeeeeeeeeeeeeeeeee</span><br/>
+							<span style="color:black; text-decoration: none;">eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</span><br/>
 						</p>
 					</div>		
 				</a>
