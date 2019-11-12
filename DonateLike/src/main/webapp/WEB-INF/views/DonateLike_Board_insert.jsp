@@ -17,7 +17,7 @@
 <body>
 	<!-- 상단바 -->
 	<jsp:include page="bar/topbar.jsp"></jsp:include>
-<!-- 게시판글쓰기 시작 -->
+	<!-- 게시판글쓰기 시작 -->
 	<div class="container">
 		<form action="DonateLike_Board_insert" method = "post">
 			<div>
@@ -31,7 +31,7 @@
 			<br />
 			내용 : <textarea rows="6" name="content" class="form-control"></textarea>
 			<br /> 
-			작성자 :<input type="text" name="dm_id" value="test" class="form-control" readonly="readonly"/>
+			작성자 :<input type="text" name="dm_id" value="${sessionScope.SID}" class="form-control" readonly="readonly"/>
 			<br />
 			<input type="submit" value="글쓰기" class="btn btn-primary"/>
 		</form>

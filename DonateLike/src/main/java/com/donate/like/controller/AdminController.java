@@ -7,10 +7,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class AdminController {
-//	 	관리자 페이지
+		// 관리자 메인 페이지
 	 	@RequestMapping(value = "/adminMain", method = RequestMethod.GET)
 	 	public String adminMain( Model model) {
 	 		
 	 		return "adminMain";
+	 	}
+	 	@RequestMapping(value = "/adminBoard", method = RequestMethod.GET)
+	 	public String adminBoard( Model model) {
+	 		
+	 		return "adminBoard";
 	 	}
 }

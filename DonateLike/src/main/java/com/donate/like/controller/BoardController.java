@@ -29,14 +29,14 @@ public class BoardController {
 	// 게시글 쓰기
 	@RequestMapping(value="DonateLike_Board_insert", method = RequestMethod.GET)
 	public String DonateLike_Board_insert(Model model,HttpSession httpSession, HttpServletRequest request) {
-//		String no = (String) httpSession.getAttribute("SID");
-//		System.out.println("no : " + no);
-//		if(no==null) {
-//			request.setAttribute("type", "error");
-//			request.setAttribute("msg", "로그인이 필요합니다");
-//			request.setAttribute("url", "login");
-//			return "alert";
-//		}
+		String no = (String) httpSession.getAttribute("SID");
+		System.out.println("no : " + no);
+		if(no==null) {
+			request.setAttribute("type", "error");
+			request.setAttribute("msg", "로그인이 필요합니다");
+			request.setAttribute("url", "login");
+			return "alert";
+		}
 		return "DonateLike_Board_insert";
 	}
 	
