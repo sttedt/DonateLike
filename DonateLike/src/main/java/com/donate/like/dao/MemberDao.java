@@ -20,5 +20,17 @@ public class MemberDao {
 	public Map<String, Object> loginSelect(Map<String, Object> map) {
 		return ss.selectOne("donate_member.loginSelect", map);
 	}
-
+	
+	public Map<String, Object> profileOne(String DM_ID) {
+		return ss.selectOne("donate_member.profileOne", DM_ID);
+	}
+	
+	// 회원정보 수정페이지
+	public Map<String, Object> profile_update(String DM_ID) {
+		return ss.selectOne("donate_member.profile_update", DM_ID);
+	}
+	// 회원정보 수정 데이터를 디비로 보내기
+	public int memberUpdate(Map<String, Object> map) {
+		return ss.update("donate_member.memberUpdate", map);
+	}		
 }

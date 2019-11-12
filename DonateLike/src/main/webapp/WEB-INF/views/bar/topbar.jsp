@@ -55,7 +55,7 @@
 					</li>
 					<li><a href="#">MyPage</a>
 						<ul>
-							<li><a href="#">개인정보 수정</a></li>
+							<li><a href="profile_check">개인정보 수정</a></li>
 							<li><a href="#">기부상세내역</a></li>
 							<li><a href="#">기부 영수증</a></li>
 						</ul>

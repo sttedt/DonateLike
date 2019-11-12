@@ -12,5 +12,21 @@
 		WHERE DM_ID=#{id} AND DM_PW=#{pw}
 	</select>
 
+	<select id="profileOne" parameterType="String" resultType="map">
+		SELECT * FROM donate_member WHERE DM_ID = #{id}
+	</select>
+	
+	<!-- 회원정보 수정  --> 
+	<select id="profile_update" resultType="map" parameterType="String">
+		SELECT * FROM donate_member
+		 WHERE DM_ID = #{id}
+	</select>
+
+	<!-- 회원정보 수정 데이터 디비 넣기  -->
+	<update id="memberUpdate" parameterType="map">
+		UPDATE donate_member 
+		SET DM_NAME=#{DM_NAME}, DM_PW=#{pw}
+		WHERE DM_ID=#{DM_ID}
+	</update>
 
 </mapper>

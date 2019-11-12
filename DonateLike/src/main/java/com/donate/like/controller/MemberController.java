@@ -22,14 +22,14 @@ public class MemberController {
 	@Autowired
 	MemberService memberService;
 	
-	//회원가입
+	//회원가입 페이지 띄우기
 	@RequestMapping(value = "join", method = RequestMethod.GET)
 	// param은 map을 받는다
 	public String join(Model model) {
 		return "join";
 	}
 	
-	// 회원가입 정보
+	// 회원가입 정보 보내기
 	@RequestMapping(value = "join", method = RequestMethod.POST)
 	public String join(@RequestParam Map<String, Object> map, @RequestParam("DM_PW") String DM_PW) {
 		System.out.println("map : " + map);
@@ -41,7 +41,7 @@ public class MemberController {
 		return "main";
 	}
 	
-	//로그인
+	//로그인 페이지
 	@RequestMapping(value = "login", method = RequestMethod.GET)
 	// param은 map을 받는다
 	public String login(Model model) {
@@ -83,4 +83,65 @@ public class MemberController {
 		request.setAttribute("url", "main");
 		return "bar/alert";
 	}
+	
+	// 회원정보 확인
+	@RequestMapping(value = "profile_check", method = RequestMethod.GET)
+	public String profile_check_get(Model model, HttpSession httpsession) {
+		return "profile_check";
+	}
+	
+	@RequestMapping(value = "profile_check", method = RequestMethod.POST)
+	public String profile_check_post(Model model, @RequestParam Map<String, Object> map,
+			@RequestParam("pw") String pw) {
+		String MD_PW = EncryptionClass.convertiMD5(pw);
+		map.put("pw", MD_PW);
+		System.out.println("map : " + map);
+		
+		Map<String, Object> data = memberService.loginSelect(map);
+		if (data == null) {
+			return "redirect:/profile_check";
+		} else {
+			return "redirect:/profile";
+		}
+	}
+	
+	@RequestMapping(value = "profile")
+	public String show(Model model, HttpSession ss) {
+		String DM_ID = (String) ss.getAttribute("SID");
+		model.addAttribute("pro", memberService.profile(DM_ID));
+		return "profile";
+	}
+	
+	
+	// 회원정보 수정페이지로 가기
+	@RequestMapping(value = "profile_update", method = RequestMethod.GET)
+	public String up(Model model, @RequestParam("DM_ID") String DM_ID) {
+
+		model.addAttribute("profile_update", memberService.profile_update(DM_ID));
+		return "profile_update";
+	}
+	
+	// 회원정보 수정 데이터를 디비로 보내기
+	@RequestMapping(value = "profile_update", method = RequestMethod.POST)
+	public String up(@RequestParam Map<String, Object> map, Model model, @RequestParam("DM_ID2") String DM_ID,
+			@RequestParam("pw") String pw) {
+		String MD_PW = EncryptionClass.convertiMD5(pw);
+
+		map.put("pw", MD_PW);
+		System.out.println("map : " + map);
+		memberService.memberUpdate(map);// 데이터넘기기
+		model.addAttribute("profile_update", memberService.profile_update(DM_ID));// model객체를 이용해서, view로 데이터전달/ 넘길 데이터의 이름과 변수에
+																		 // 넣을 데이터값을 넣음, 그값을 뷰로 넘겨줌
+		System.out.println(map);
+		return "redirect:/profile?DM_ID=" + DM_ID;
+		// redirect: 경로설정
+	}
+	
+	// 아이디 찾기 폼
+		@RequestMapping(value = "find_id_form", method = RequestMethod.GET)
+		// param은 map을 받는다
+		public String find_id_form(Model model) {
+			return "find_id_form";
+		}
+	
 }
