@@ -3,6 +3,7 @@ package com.donate.like.controller;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -132,16 +133,26 @@ public class MemberController {
 		memberService.memberUpdate(map);// 데이터넘기기
 		model.addAttribute("profile_update", memberService.profile_update(DM_ID));// model객체를 이용해서, view로 데이터전달/ 넘길 데이터의 이름과 변수에
 																		 // 넣을 데이터값을 넣음, 그값을 뷰로 넘겨줌
-		System.out.println(map);
+		
 		return "redirect:/profile?DM_ID=" + DM_ID;
 		// redirect: 경로설정
 	}
 	
 	// 아이디 찾기 폼
-		@RequestMapping(value = "find_id_form", method = RequestMethod.GET)
-		// param은 map을 받는다
-		public String find_id_form(Model model) {
-			return "find_id_form";
-		}
+	@RequestMapping(value = "find_id_form", method = RequestMethod.GET)
+	// param은 map을 받는다
+	public String find_id_form(Model model) {
+		return "find_id_form";
+	}
+		
+	// 아이디 찾기
+	@RequestMapping(value = "find_id_form", method = RequestMethod.POST)
+	public String find_id(HttpServletResponse response, @RequestParam("email") String email, Model md)
+			throws Exception {
+		md.addAttribute("id", memberService.find_id(response, email));
+		System.out.println("email : " + email);
+		return "find_id";
+	}
+		
 	
 }

@@ -28,5 +28,10 @@
 		SET DM_NAME=#{DM_NAME}, DM_PW=#{pw}
 		WHERE DM_ID=#{DM_ID}
 	</update>
+	
+		<!-- 아이디 찾기 -->
+	<select id="find_id" parameterType="String" resultType="String">
+		select * from donate_member where DM_EMAIL = #{email}
+	</select>
 
 </mapper>

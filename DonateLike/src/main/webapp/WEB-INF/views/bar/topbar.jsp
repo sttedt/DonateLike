@@ -82,28 +82,14 @@
 							</li>
 							<li><a href="#">MyPage</a>
 								<ul>
-									<li><a href="#">개인정보 수정</a></li>
+									<li><a href="profile_check">개인정보 수정</a></li>
 									<li><a href="#">기부상세내역</a></li>
 									<li><a href="#">기부 영수증</a></li>
 								</ul>
 							</li>
 						</ul>
-<<<<<<< HEAD
-					</li>
-					<li><a href="DonateLike_Board">Q & A</a>
-					</li>
-					<li><a href="#">MyPage</a>
-						<ul>
-							<li><a href="profile_check">개인정보 수정</a></li>
-							<li><a href="#">기부상세내역</a></li>
-							<li><a href="#">기부 영수증</a></li>
-						</ul>
-					</li>
-				</ul>
-=======
-				    </c:otherwise>
+					</c:otherwise>
 				</c:choose>
->>>>>>> branch 'master' of https://github.com/sttedt/DonateLike.git
 			</div>
 		</div>
 		<hr/>

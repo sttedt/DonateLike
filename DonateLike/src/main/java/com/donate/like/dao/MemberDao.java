@@ -33,4 +33,9 @@ public class MemberDao {
 	public int memberUpdate(Map<String, Object> map) {
 		return ss.update("donate_member.memberUpdate", map);
 	}		
+	
+	// 아이디 찾기
+	public String find_id(String email) throws Exception{
+		return ss.selectOne("donate_member.find_id", email);
+	}
 }
