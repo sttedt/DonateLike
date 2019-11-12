@@ -21,4 +21,21 @@ public class BoardService {
 		boardDao.boardInsert(map);
 	}
 
+	// 게시판 상세페이지
+	public Map<String, Object> boardOne(int B_NO) {
+		return boardDao.boardOne(B_NO);
+	}
+	
+	// 게시판 수정페이지 가기
+	public Map<String, Object> board_update_ready(int B_NO) {
+		return boardDao.board_update_ready(B_NO);
+	}
+	// 게시판 수정데이터 디비에 보내기
+	public void boardUpdate(Map<String, Object> map) {
+		boardDao.boardUpdate(map);
+	}
+	// 게시판 삭제
+	public void boardDelete(Map<String, Object> map) {
+		boardDao.boardDelete(map);
+	}
 }

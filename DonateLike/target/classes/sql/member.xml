@@ -3,8 +3,8 @@
 <mapper namespace="donate_member">
 
 	<insert id="joinInsert">
-		INSERT INTO donate_member ( DM_ID, DM_NAME, DM_PW )
-		VALUES (#{DM_ID}, #{DM_NAME}, #{DM_PW} )
+		INSERT INTO donate_member ( DM_ID, DM_NAME, DM_PW , DM_ADDRESS)
+		VALUES (#{DM_ID}, #{DM_NAME}, #{DM_PW},#{DM_ADDRESS} )
 	</insert>
 	
 	<select id="loginSelect" resultType="map" parameterType="map">

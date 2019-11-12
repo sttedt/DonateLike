@@ -2,12 +2,16 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="true" %>
+
+
 <html>
 <head>
 <meta charset="UTF-8">
 	<title>Insert title here</title>
 	<link rel="stylesheet" href="resources/css/bootstrap.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+	
+	
 	<style type="text/css">
 		.menubar{
 		border:none;
@@ -131,6 +135,10 @@
 			<div align="right">
 				<span id="pw_confirmMsg"></span>
 			</div>
+			<input type="text" name="DM_ADDRESS" placeholder="주소"
+				class="form-control"><br>
+		
+			
 <!-- 			<div class="form-group input-group"> -->
 <!-- 				<input type="email" name="email" id="email" placeholder="이메일" -->
 <!-- 					class="form-control"> <label>&nbsp;</label> <input -->
@@ -166,9 +174,24 @@
 			<input type="submit" class="btn btn-dark" id="btn_join" value="회원가입">
 		</form>
 	</div>
+
+<script src='resources/js/jquery-3.3.1.min.js'></script>
+<script src="resources/js/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	
+	<script
+	src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script>
+	$('input[name=DM_ADDRESS]').on('click', function() {
+		new daum.Postcode({
+			oncomplete : function(data) {
+				$('input[name=DM_ADDRESS]').val(data.jibunAddress)
+			}
+		}).open();
+	})
+
 // 	var isEmailAuth = false
-// 	$(function() {
+	$(function() {
 // 		$('#btn_join').click(function() {
 // 			if (a()) {
 // 				$('#btn_join').attr('type', 'submit');
@@ -177,25 +200,25 @@
 // 			}
 // 		});
 
-// 		$('#id').keyup(function() {
-// 			checkId();
-// 		});
-// 		$('#pw').keyup(function() {
-// 			checkPw();
-// 		});
-// 		$('#pw_confirm').keyup(function() {
-// 			confirm_pw();
-// 		});
-// 		$("#name").keyup(function() {
-// 			checkName(event);
-// 		});
+		$('#DM_ID').keyup(function() {
+			checkId();
+		});
+		$('#pw').keyup(function() {
+			checkPw();
+		});
+		$('#pw_confirm').keyup(function() {
+			confirm_pw();
+		});
+		$("#name").keyup(function() {
+			checkName(event);
+		});
 // 		$('#age').keyup(function() {
 // 			checkAge();
 // 		});
 // 		$('#email').keyup(function() {
 // 			checkEmail();
 // 		});
-// 	});
+	});
 // 	$('#btn_email').on('click', function() {
 // 		var email = $('#email').val()
 // 		SuccessMsg($('#emailMsg'), "메일 전송 중입니다..")
@@ -238,15 +261,15 @@
 // 			}
 // 		})
 // 	})
-// 	function ErrorMsg(obj, msg) {
-// 		obj.attr("class", "red");
-// 		obj.html(msg);
-// 	}
+	function ErrorMsg(obj, msg) {
+		obj.attr("class", "red");
+		obj.html(msg);
+	}
 
-// 	function SuccessMsg(obj, msg) {
-// 		obj.attr("class", "success");
-// 		obj.html(msg);
-// 	}
+	function SuccessMsg(obj, msg) {
+		obj.attr("class", "success");
+		obj.html(msg);
+	}
 
 // 	function a() {
 // 		if (checkId() && checkPw() && checkName(event) && checkEmail()
@@ -258,112 +281,112 @@
 // 		}
 // 	}
 
-// 	function checkId() {
-// 		var Msg = $('#idMsg');
-// 		var id = $('#id').val();
+	function checkId() {
+		var Msg = $('#idMsg');
+		var id = $('#DM_ID').val();
 
-// 		if (id == "") {
-// 			ErrorMsg(Msg, "필수입니다");
-// 			$("#idMsg").css("color", "red");
-// 			return false;
-// 		} else if (id.length > 1 && id.length < 6) {
-// 			ErrorMsg(Msg, "아이디는 6자리 이상입니다");
-// 			$("#idMsg").css("color", "red");
-// 			return false;
-// 		} else if (id.length > 5) {
-// 			if (id.length > 12) {
-// 				ErrorMsg(Msg, "아이디는 12자리를 넘을수 없습니다.");
-// 				$("#idMsg").css("color", "red");
-// 				return false
-// 			}
-// 			$.ajax({
-// 				url : 'ajax_id_check?id=' + id,
-// 				type : 'get',
-// 				success : function(data) {
+		if (id == "") {
+			ErrorMsg(Msg, "필수입니다");
+			$("#idMsg").css("color", "red");
+			return false;
+		} else if (id.length > 1 && id.length < 6) {
+			ErrorMsg(Msg, "아이디는 6자리 이상입니다");
+			$("#idMsg").css("color", "red");
+			return false;
+		} else if (id.length > 5) {
+			if (id.length > 12) {
+				ErrorMsg(Msg, "아이디는 12자리를 넘을수 없습니다.");
+				$("#idMsg").css("color", "red");
+				return false
+			}
+			$.ajax({
+				url : 'ajax_id_check?id=' + id,
+				type : 'get',
+				success : function(data) {
 
-// 					if (data == 1) {
-// 						ErrorMsg(Msg, "중복된 아이디 입니다.");
-// 						$("#idMsg").css("color", "red");
-// 						return false;
-// 					} else {
-// 						SuccessMsg(Msg, "사용가능한 아이디 입니다.");
-// 						$("#idMsg").css("color", "green");
-// 						return true;
-// 					}
-// 				}
-// 			})
+					if (data == 1) {
+						ErrorMsg(Msg, "중복된 아이디 입니다.");
+						$("#idMsg").css("color", "red");
+						return false;
+					} else {
+						SuccessMsg(Msg, "사용가능한 아이디 입니다.");
+						$("#idMsg").css("color", "green");
+						return true;
+					}
+				}
+			})
 
-// 		}
-// 		return true;
-// 	}
+		}
+		return true;
+	}
 
-// 	function checkPw() {
-// 		var Msg = $('#pwMsg');
-// 		var pw = $('#pw').val();
-// 		if (pw == "") {
-// 			ErrorMsg(Msg, "필수입니다");
-// 			$("#pwMsg").css("color", "red");
-// 			return false;
-// 		} else if (pw.length < 8) {
-// 			ErrorMsg(Msg, "비밀번호는 8자리 이상입니다");
-// 			$("#pwMsg").css("color", "red");
-// 			return false;
-// 		} else {
-// 			SuccessMsg(Msg, "사용가능한 비밀번호 입니다");
-// 			$("#pwMsg").css("color", "green");
-// 			return true;
-// 		}
-// 		return true;
-// 	}
-// 	function confirm_pw() {
-// 		var Msg = $('#pw_confirmMsg');
-// 		var pw = $('#pw').val();
-// 		var confirm = $('#pw_confirm').val();
-// 		if (pw == "") {
-// 			ErrorMsg(Msg, "필수입니다");
-// 			Msg.css("color", "red");
-// 			return false;
-// 		} else if (pw.length < 8) {
-// 			ErrorMsg(Msg, "비밀번호는 8자리 이상입니다");
-// 			Msg.css("color", "red");
-// 			return false;
-// 		} else if (pw !== confirm) {
-// 			ErrorMsg(Msg, "비밀번호가 일치하지 않습니다.");
-// 			Msg.css("color", "red");
-// 			return false;
-// 		} else {
-// 			SuccessMsg(Msg, "사용가능한 비밀번호 입니다");
-// 			Msg.css("color", "green");
-// 			return true;
-// 		}
-// 		return true;
-// 	}
+	function checkPw() {
+		var Msg = $('#pwMsg');
+		var pw = $('#pw').val();
+		if (pw == "") {
+			ErrorMsg(Msg, "필수입니다");
+			$("#pwMsg").css("color", "red");
+			return false;
+		} else if (pw.length < 8) {
+			ErrorMsg(Msg, "비밀번호는 8자리 이상입니다");
+			$("#pwMsg").css("color", "red");
+			return false;
+		} else {
+			SuccessMsg(Msg, "사용가능한 비밀번호 입니다");
+			$("#pwMsg").css("color", "green");
+			return true;
+		}
+		return true;
+	}
+	function confirm_pw() {
+		var Msg = $('#pw_confirmMsg');
+		var pw = $('#pw').val();
+		var confirm = $('#pw_confirm').val();
+		if (pw == "") {
+			ErrorMsg(Msg, "필수입니다");
+			Msg.css("color", "red");
+			return false;
+		} else if (pw.length < 8) {
+			ErrorMsg(Msg, "비밀번호는 8자리 이상입니다");
+			Msg.css("color", "red");
+			return false;
+		} else if (pw !== confirm) {
+			ErrorMsg(Msg, "비밀번호가 일치하지 않습니다.");
+			Msg.css("color", "red");
+			return false;
+		} else {
+			SuccessMsg(Msg, "사용가능한 비밀번호 입니다");
+			Msg.css("color", "green");
+			return true;
+		}
+		return true;
+	}
 
-// 	function checkName(event) {
-// 		regexp = /[a-z0-9]|[ \[\]{}()<>?|`~!@#$%^&*-_+=,.;:\"'\\]/g;
-// 		//v = $(this).val();
+	function checkName(event) {
+		regexp = /[a-z0-9]|[ \[\]{}()<>?|`~!@#$%^&*-_+=,.;:\"'\\]/g;
+		//v = $(this).val();
 
-// 		var Msg = $('#nameMsg');
-// 		var name = $('#name').val();
+		var Msg = $('#nameMsg');
+		var name = $('#name').val();
 
-// 		if (name == "") {
-// 			ErrorMsg(Msg, "필수입니다.");
-// 			$("#nameMsg").css("color", "red");
-// 			return false;
-// 		}
-// 		if (regexp.test(name)) {
-// 			ErrorMsg(Msg, "한글만 입력가능합니다.");
-// 			$("#nameMsg").css("color", "red");
-// 			$('#name').val("");
-// 			//$(this).val(name.replace(regexp,''));
-// 			return false;
-// 		} else if (name != "") {
-// 			SuccessMsg(Msg, "OK!");
-// 			$("#nameMsg").css("color", "green");
-// 			return true;
-// 		}
-// 		return true;
-// 	}
+		if (name == "") {
+			ErrorMsg(Msg, "필수입니다.");
+			$("#nameMsg").css("color", "red");
+			return false;
+		}
+		if (regexp.test(name)) {
+			ErrorMsg(Msg, "한글만 입력가능합니다.");
+			$("#nameMsg").css("color", "red");
+			$('#name').val("");
+			//$(this).val(name.replace(regexp,''));
+			return false;
+		} else if (name != "") {
+			SuccessMsg(Msg, "OK!");
+			$("#nameMsg").css("color", "green");
+			return true;
+		}
+		return true;
+	}
 
 // 	function checkEmail() {
 // 		var Msg = $('#emailMsg');
@@ -436,8 +459,5 @@
 </body>
 
 
-<script src='resources/js/jquery-3.3.1.min.js'></script>
-<script src="resources/js/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </html>
