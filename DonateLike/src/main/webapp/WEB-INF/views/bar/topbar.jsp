@@ -8,32 +8,31 @@
 			<a class="nav-link fas fa-user" href="login" id="dropLogin" data-toggle="dropdown" aria-haspopup="true"
 				aria-expanded="false" style="float: right; font-size: 30px; margin-top: 10px; margin-right: 50px; text-decoration:none; color: #000;">
 			</a>
-			<!-- 로그인을 하지 않았을때 -->
-			<c:if test="${sessionScope.SID eq null}">
-				<div class="dropdown-menu" aria-labelledby="dropLogin">
-					<a class="dropdown-item" href="login">로그인</a> 
-					<a class="dropdown-item" href="join">회원가입</a> 
-					<a class="dropdown-item" href="DonateLike_Board">문의하기</a> 
-				</div>
-			</c:if>
-			<!-- 로그인 했을때 -->
-			<c:if test="${sessionScope.SID ne null}">
-				<div class="dropdown-menu" aria-labelledby="dropLogin">
-					<a class="dropdown-item" href="#">${sessionScope.SID} 님</a> 
-					<a class="dropdown-item" href="logout">로그아웃</a> 
-					<a class="dropdown-item" href="DonateLike_Board">문의하기</a> 
-				</div>		
-			</c:if>
-			<!-- 관리자일때 -->
-			<c:if test="${sessionScope.SID eq admin}">
-				<div class="dropdown-menu" aria-labelledby="dropLogin">
-					<a class="dropdown-item" href="#">관리자 님</a> 
-					<a class="dropdown-item" href="logout">로그아웃</a> 
-					<a class="dropdown-item" href="board">수혜자 관리</a> 
-					<a class="dropdown-item" href="DonateLike_Board">문의게시판</a> 
-				</div>		
-			</c:if>
 
+			<c:choose>
+			    <c:when test="${sessionScope.SID eq 'admin'}">
+			        <div class="dropdown-menu" aria-labelledby="dropLogin">
+						<a class="dropdown-item" href="#">관리자 님</a> 
+						<a class="dropdown-item" href="logout">로그아웃</a> 
+						<a class="dropdown-item" href="board">수혜자 관리</a> 
+						<a class="dropdown-item" href="DonateLike_Board">문의게시판</a> 
+					</div>
+			    </c:when>
+			    <c:when test="${sessionScope.SID ne null}">
+					<div class="dropdown-menu" aria-labelledby="dropLogin">
+						<a class="dropdown-item" href="#">${sessionScope.SID} 님</a> 
+						<a class="dropdown-item" href="logout">로그아웃</a> 
+						<a class="dropdown-item" href="DonateLike_Board">문의하기</a> 
+					</div>
+			    </c:when>
+			    <c:otherwise>
+			        <div class="dropdown-menu" aria-labelledby="dropLogin">
+						<a class="dropdown-item" href="login">로그인</a> 
+						<a class="dropdown-item" href="join">회원가입</a> 
+						<a class="dropdown-item" href="DonateLike_Board">문의하기</a> 
+					</div>
+			    </c:otherwise>
+			</c:choose>
 			<!-- 드롭다운 메뉴 -->
 			<div class="menubar" align="center">
 				<ul>
