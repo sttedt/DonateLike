@@ -35,31 +35,61 @@
 			</c:choose>
 			<!-- 드롭다운 메뉴 -->
 			<div class="menubar" align="center">
-				<ul>
-					<li><a href="#">기부니 좋아 소개</a>
+				<c:choose>
+				    <c:when test="${sessionScope.SID eq 'admin'}">
 						<ul>
-							<li><a href="DonateLike_Introduce">사이트소개</a></li>
-							<li><a href="DonateLike_purpose">목표와 비전</a></li>
+							<li><a href="adminMain">홈페이지 관리</a>
+								<ul>
+									<li><a href="#">소개 수정</a></li>
+									<li><a href="#">대상 선정 수정</a></li>
+								</ul>
+							</li>
+							<li><a href="#">수혜자 관리</a>
+								<ul>
+									<li><a href="DonateLike_Introduce">수혜자 등록</a></li>
+									<li><a href="DonateLike_purpose">수혜자 수정</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#" id="current">후원금 관리</a>
+								<ul>
+									<li><a href="DonateLike_TargetSelection">후원 내역</a></li>
+									<li><a href="#">후원</a></li>
+								</ul>
+							</li>
+							<li><a href="DonateLike_Board">문의 사항</a>
+							</li>
 						</ul>
-					</li>
-					<li>
-						<a href="#" id="current">후원하기</a>
+						
+				    </c:when>
+				    <c:otherwise>
 						<ul>
-							<li><a href="DonateLike_TargetSelection">대상선정</a></li>
-							<li><a href="#">정기후원</a></li>
-							<li><a href="#">일시후원</a></li>
+							<li><a href="#">기부니 좋아 소개</a>
+								<ul>
+									<li><a href="DonateLike_Introduce">사이트소개</a></li>
+									<li><a href="DonateLike_purpose">목표와 비전</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#" id="current">후원하기</a>
+								<ul>
+									<li><a href="DonateLike_TargetSelection">대상선정</a></li>
+									<li><a href="#">정기후원</a></li>
+									<li><a href="#">일시후원</a></li>
+								</ul>
+							</li>
+							<li><a href="DonateLike_Board">Q & A</a>
+							</li>
+							<li><a href="#">MyPage</a>
+								<ul>
+									<li><a href="#">개인정보 수정</a></li>
+									<li><a href="#">기부상세내역</a></li>
+									<li><a href="#">기부 영수증</a></li>
+								</ul>
+							</li>
 						</ul>
-					</li>
-					<li><a href="DonateLike_Board">Q & A</a>
-					</li>
-					<li><a href="#">MyPage</a>
-						<ul>
-							<li><a href="#">개인정보 수정</a></li>
-							<li><a href="#">기부상세내역</a></li>
-							<li><a href="#">기부 영수증</a></li>
-						</ul>
-					</li>
-				</ul>
+				    </c:otherwise>
+				</c:choose>
 			</div>
 		</div>
 		<hr/>
