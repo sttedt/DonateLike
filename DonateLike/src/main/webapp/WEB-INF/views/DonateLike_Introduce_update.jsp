@@ -26,44 +26,7 @@
 	<br/>
 	
 	<div class="DonateLike_Card_Center">
-		<h6> 후원금 이렇게 사용됩니다.</h6>
 		<div class="card-deck mb-3 " id="div_left" >
-			<a href="" style="margin-left: 10px;">
-				<div class="card mb-4 scale" >
-						<img class="card-img-top" src="" style= "height: 280px; width: 350px;"/>
-						<p class="card-header" style= "width: 350px; text-align: center; background:white;">
-							<span style="color:black; text-decoration: none;">aaaaaaaaa</span><br/>
-							<span style="color:black; text-decoration: none;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><br/>
-						</p>
-				</div>		
-			</a>
-			<a href="" style="margin-left: 10px;">
-				<div class="card mb-4 scale" >
-						<img class="card-img-top" src="" style= "height: 280px; width: 350px;"/>
-						<p class="card-header" style= "width: 350px; text-align: center; background:white;">
-							<span style="color:black; text-decoration: none;">aaaaaaaaa</span><br/>
-							<span style="color:black; text-decoration: none;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><br/>
-						</p>
-				</div>		
-			</a>
-			<a href="" style="margin-left: 10px;">
-				<div class="card mb-4 scale" >
-						<img class="card-img-top" src="" style= "height: 280px; width: 350px;"/>
-						<p class="card-header" style= "width: 350px; text-align: center; background:white;">
-							<span style="color:black; text-decoration: none;">aaaaaaaaa</span><br/>
-							<span style="color:black; text-decoration: none;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><br/>
-						</p>
-				</div>		
-			</a>
-			<a href="" style="margin-left: 10px;">
-				<div class="card mb-4 scale" >
-						<img class="card-img-top" src="" style= "height: 280px; width: 350px;"/>
-						<p class="card-header" style= "width: 350px; text-align: center; background:white;">
-							<span style="color:black; text-decoration: none;">aaaaaaaaa</span><br/>
-							<span style="color:black; text-decoration: none;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><br/>
-						</p>
-				</div>		
-			</a>
 			<a href="" style="margin-left: 10px;">
 				<div class="card mb-4 scale" >
 						<img class="card-img-top" src="" style= "height: 280px; width: 350px;"/>
@@ -81,5 +44,9 @@
 <script src='resources/js/jquery-3.3.1.min.js'></script>
 <script src="resources/js/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script type="text/javascript">
+	
 
+
+</script>
 </html>

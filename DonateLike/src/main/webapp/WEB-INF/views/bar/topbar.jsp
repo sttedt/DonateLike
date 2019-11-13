@@ -40,7 +40,7 @@
 						<ul>
 							<li><a href="adminMain">홈페이지 관리</a>
 								<ul>
-									<li><a href="DonateLike_Introduce">소개 수정</a></li>
+									<li><a href="DonateLike_Introduce_update">소개 수정</a></li>
 									<li><a href="#">대상 선정 수정</a></li>
 								</ul>
 							</li>
@@ -54,7 +54,7 @@
 								<a href="#" id="current">후원금 관리</a>
 								<ul>
 									<li><a href="DonateLike_TargetSelection">후원 내역</a></li>
-									<li><a href="#">후원</a></li>
+									<li><a href="Donate_apply">후원</a></li>
 								</ul>
 							</li>
 							<li><a href="DonateLike_Board">문의 사항</a>
@@ -74,8 +74,8 @@
 								<a href="#" id="current">후원하기</a>
 								<ul>
 									<li><a href="DonateLike_TargetSelection">대상선정</a></li>
-									<li><a href="#">정기후원</a></li>
-									<li><a href="#">일시후원</a></li>
+									<li><a href="Donate_apply">정기후원</a></li>
+									<li><a href="Donate_apply">일시후원</a></li>
 								</ul>
 							</li>
 							<li><a href="DonateLike_Board">Q & A</a>

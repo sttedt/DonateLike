@@ -7,12 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class AdminDao {
-	
+public class DonateDao {
 	@Autowired
 	SqlSessionTemplate sessionTemplate;
-	
-	public int storeInsert(Map<String, Object> map) {
-		return sessionTemplate.insert("admin.takerInsert",map);
+	public int donateInsert(Map<String, Object> map) {
+		return sessionTemplate.insert("donate.donateInsert", map);
 	}
 }

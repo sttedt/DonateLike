@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="donate">
+	<insert id="donateInsert">
+		INSERT INTO donate_account (AA_ACCOUNT, AA_BANK, AA_DONATE, DONATE_SELECT, DM_ID, CATE_NO) 
+		VALUES(#{account_number}, #{Bank_code}, #{donate_price}, #{donate_select}, #{DT_ID}, #{taker_class})
+	</insert>
+	
+</mapper>
