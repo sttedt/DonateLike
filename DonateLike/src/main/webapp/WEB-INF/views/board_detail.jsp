@@ -16,40 +16,45 @@
 <body>
 	<!-- 상단바 -->
 	<jsp:include page="bar/topbar.jsp"></jsp:include>
-		<!-- 목차? 상위목록 표시 -->
-	<div style="text-align: right;  margin-right: 20px">
-		<a href="main" style="color:black; text-decoration: none;">Home</a> > <a href="DonateLike_Board" style="color:black; text-decoration: none;">문의 하기</a>	
-	</div>
-	<!-- 게시판 시작 -->
-	<div class="container" style="margin-top: 15px; z-index: -9999;" >
+	
+		<div class="container">
 		<div>
-			<h3 style="text-align: center;">Q&A 목록</h3>
-		</div>
-
-		<table class="table" id='target' style="z-index: -9999;">
-			<thead>
+			<h3 style="text-align: left;">
+				게시글
+			</h3>
+		</div>	
+		
+		<table class="table">
+			<tbody>
 				<tr>
 					<th>글번호</th>
-					<th>글제목</th>
-					<th>작성자</th>
-					<th>날짜</th>
+					<td>${detail.B_NO}</td>
 				</tr>
-			</thead>
-			<tbody>
-				<c:forEach items="${b_list}" var="map">
-					<tr>
-						<td>${map.B_NO}</td>
-						<td>
-							<a class="title" href="board_detail?B_NO=${map.B_NO}" name="B_TITLE">${map.B_TITLE}</a>
-						</td>
-						<td>${map.DM_ID}</td>
-						<td>${map.B_DATE}</td>
-					</tr>
-				</c:forEach>
+				<tr>
+					<th>글제목</th>
+					<td>${detail.B_TITLE}</td>
+				</tr>
+				<tr>
+					<th>글내용</th>
+					<td>${detail.B_CONTENT}</td>
+				</tr>
+				<tr>	
+					<th>작성자</th>
+					<td>${detail.DM_ID}</td>
+				</tr>
+				<tr>	
+					<th>날짜</th>
+					<td>${detail.B_DATE}</td>
+				</tr>
+				
 			</tbody>
 		</table>
 		<div>
-			<a href="DonateLike_Board_insert" class="btn btn-dark">글쓰기</a>
+			<input type="button" class="btn btn-dark" value="목록" onclick="history.back(-1)"/>
+			<c:if test="${sessionScope.SID eq detail.DM_ID }">
+				<a href="board_update_ready?B_NO=${detail.B_NO}" class="btn btn-dark" >수정</a>
+				<a href="board_delete?B_NO=${detail.B_NO}" class="btn btn-dark" >삭제</a>
+			</c:if>
 		</div>
 	</div>
 	

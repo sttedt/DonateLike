@@ -16,42 +16,29 @@
 <body>
 	<!-- 상단바 -->
 	<jsp:include page="bar/topbar.jsp"></jsp:include>
-		<!-- 목차? 상위목록 표시 -->
-	<div style="text-align: right;  margin-right: 20px">
-		<a href="main" style="color:black; text-decoration: none;">Home</a> > <a href="DonateLike_Board" style="color:black; text-decoration: none;">문의 하기</a>	
+	
+		<div class="container">
+		<form method = "post">
+			<div>
+				<h3 style="text-align: center;">
+					게시글 수정
+				</h3>
+				<hr>
+			</div>	
+			<br /> 
+			<input type="hidden" name="B_NO" class="form-control" value="${board_update_ready.B_NO}"/>
+			<br />
+			제목 :<br /> 
+			<input type="text" name="B_TITLE" class="form-control" value="${board_update_ready.B_TITLE}"/>
+			<br />
+			내용 : <textarea rows="6" name="B_CONTENT" class="form-control">${board_update_ready.B_CONTENT}</textarea>
+			<br /> 
+			작성자 :<input type="text" name="DM_ID" value="${sessionScope.SID}" class="form-control" readonly="readonly"/>
+			<br />
+			<input type="submit" value="수정하기" class="btn btn-dark"/>
+		</form>
 	</div>
-	<!-- 게시판 시작 -->
-	<div class="container" style="margin-top: 15px; z-index: -9999;" >
-		<div>
-			<h3 style="text-align: center;">Q&A 목록</h3>
-		</div>
-
-		<table class="table" id='target' style="z-index: -9999;">
-			<thead>
-				<tr>
-					<th>글번호</th>
-					<th>글제목</th>
-					<th>작성자</th>
-					<th>날짜</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach items="${b_list}" var="map">
-					<tr>
-						<td>${map.B_NO}</td>
-						<td>
-							<a class="title" href="board_detail?B_NO=${map.B_NO}" name="B_TITLE">${map.B_TITLE}</a>
-						</td>
-						<td>${map.DM_ID}</td>
-						<td>${map.B_DATE}</td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
-		<div>
-			<a href="DonateLike_Board_insert" class="btn btn-dark">글쓰기</a>
-		</div>
-	</div>
+	
 	
 	<!-- 하단바 -->
 	<jsp:include page="bar/footer.jsp"></jsp:include>	
@@ -62,13 +49,5 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src='https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js'></script>
 <script>
-	$('#target').DataTable({
-		order : [ [ 0, 'desc' ] ],
-		ordering : true,
-		serverSide : false
-	})
 
-	$(document).ready(function() {
-		$('#target').DataTable()
-	})
 </script>
