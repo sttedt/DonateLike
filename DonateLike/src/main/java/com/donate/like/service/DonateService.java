@@ -1,5 +1,6 @@
 package com.donate.like.service;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +12,12 @@ import com.donate.like.dao.DonateDao;
 public class DonateService {
 	@Autowired
 	DonateDao donateDao;
+	
 	public void donateInsert(Map<String, Object> map) {
 		donateDao.donateInsert(map);
+	}
+	public List<Map<String, Object>> donateList(String no) {
+		return donateDao.donateList(no);
 	}
 
 }

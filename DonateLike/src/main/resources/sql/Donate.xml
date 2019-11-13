@@ -3,8 +3,12 @@
 
 <mapper namespace="donate">
 	<insert id="donateInsert">
-		INSERT INTO donate_account (AA_ACCOUNT, AA_BANK, AA_DONATE, DONATE_SELECT, DM_ID, CATE_NO) 
-		VALUES(#{account_number}, #{Bank_code}, #{donate_price}, #{donate_select}, #{DT_ID}, #{taker_class})
+		INSERT INTO donate_account (AA_ACCOUNT, AA_BANK, AA_DONATE, DONATE_SELECT, DM_ID, CATE_NO, AA_DATE) 
+		VALUES(#{account_number}, #{Bank_code}, #{donate_price}, #{donate_select}, #{DT_ID}, #{taker_class}, NOW())
 	</insert>
+	
+	<select id="donateList" resultType="map">
+		SELECT CATE_NO, AA_BANK, AA_DONATE, AA_DATE FROM DONATE_ACCOUNT WHERE DM_ID = #{no} ORDER BY AA_NO DESC
+	</select>
 	
 </mapper>

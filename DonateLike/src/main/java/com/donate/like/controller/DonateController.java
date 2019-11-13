@@ -1,5 +1,6 @@
 package com.donate.like.controller;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -38,6 +39,16 @@ public class DonateController {
 		System.out.println("map : " + map);
 		map.put("ID", no);
 		donateService.donateInsert(map);
-		return "redirect:Donate_apply";
+		return "redirect:Donate_detail";
+	}
+	
+	@RequestMapping(value="Donate_detail", method = RequestMethod.GET)
+	public String list(Model model, HttpSession httpSession, @RequestParam Map<String, Object> map) {
+		String no = (String) httpSession.getAttribute("SID");
+		System.out.println("map : " + map);
+		List<Map<String, Object>> dList = donateService.donateList(no);
+		model.addAttribute("list", dList);
+		
+		return "Donate_detail";
 	}
 }

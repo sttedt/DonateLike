@@ -1,5 +1,6 @@
 package com.donate.like.dao;
 
+import java.util.List;
 import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -12,5 +13,9 @@ public class DonateDao {
 	SqlSessionTemplate sessionTemplate;
 	public int donateInsert(Map<String, Object> map) {
 		return sessionTemplate.insert("donate.donateInsert", map);
+	}
+	
+	public List<Map<String, Object>> donateList(String no) {
+		return sessionTemplate.selectList("donate.donateList", no);
 	}
 }
