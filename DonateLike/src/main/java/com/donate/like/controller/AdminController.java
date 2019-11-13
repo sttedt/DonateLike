@@ -15,16 +15,14 @@ public class AdminController {
 	AdminService adminService;
 		
 	// 관리자 메인 페이지
-	 	@RequestMapping(value = "/adminMain", method = RequestMethod.GET)
-	 	public String adminMain( Model model) {
-	 		
-	 		return "adminMain";
-	 	}
-	 	@RequestMapping(value = "/adminBoard", method = RequestMethod.GET)
-	 	public String adminBoard( Model model) {
-	 		
-	 		return "adminBoard";
-	 	}
-	 	
-	 	
+ 	@RequestMapping(value = "/adminMain", method = RequestMethod.GET)
+ 	public String adminMain( Model model) {
+ 		
+ 		return "adminMain";
+ 	}
+ 	@RequestMapping(value = "/adminBoard", method = RequestMethod.GET)
+ 	public String adminBoard( Model model) {
+ 		
+ 		return "adminBoard";
+ 	}
 }
