@@ -19,14 +19,14 @@
 	</div>
 	
 	<!-- 소개시작 -->
-	<h1 style="text-align: center;" id="intro">기부니 좋아 소개</h1>
+	<h1 style="text-align: center;">기부니 좋아 소개</h1>
 	<br/>
 	
-	<h5 style="text-align: center;" id="1line_content"> 기부니 좋아는 블록체인을 통해 신뢰할수 있는 투명한 기부를 위해 노력합니다.</h5>
+	<h5 style="text-align: center;"> 기부니 좋아는 블록체인을 통해 신뢰할수 있는 투명한 기부를 위해 노력합니다.</h5>
 	<br/>
 	
 	<div class="DonateLike_Card_Center">
-		<h6 id="smail_content"> 후원금 이렇게 사용됩니다.</h6>
+		<h6> 후원금 이렇게 사용됩니다.</h6>
 		<div class="card-deck mb-3 " id="div_left" >
 			<a href="" style="margin-left: 10px;">
 				<div class="card mb-4 scale" >
@@ -75,11 +75,6 @@
 			</a>
 		</div>
 	</div>
-	
-	<c:if test="${sessionScope.SID eq 'admin' }">
-		<a href="DonateLike_Introduce_update" class="btn btn-dark" >수정</a>
-		<a href="#" class="btn btn-dark" >삭제</a>
-	</c:if>
 	
 	<jsp:include page="bar/footer.jsp"></jsp:include>	
 </body>

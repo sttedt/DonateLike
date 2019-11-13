@@ -3,11 +3,15 @@ package com.donate.like.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.donate.like.dao.TakerManagementDao;
+import com.donate.like.dao.AdminDao;
+
 @Service
-public class TakerManagementService {
+public class AdminService {
+	
 	@Autowired
-	TakerManagementDao takerManagementDao;
+	AdminDao adminDao;
 	
 
+
 }
+

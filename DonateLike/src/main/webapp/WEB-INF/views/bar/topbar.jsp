@@ -40,13 +40,13 @@
 						<ul>
 							<li><a href="adminMain">홈페이지 관리</a>
 								<ul>
-									<li><a href="#">소개 수정</a></li>
+									<li><a href="DonateLike_Introduce">소개 수정</a></li>
 									<li><a href="#">대상 선정 수정</a></li>
 								</ul>
 							</li>
 							<li><a href="#">수혜자 관리</a>
 								<ul>
-									<li><a href="DonateLike_Introduce">수혜자 등록</a></li>
+									<li><a href="taker_enroll">수혜자 등록</a></li>
 									<li><a href="DonateLike_purpose">수혜자 수정</a></li>
 								</ul>
 							</li>
