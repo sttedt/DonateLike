@@ -20,33 +20,28 @@
 		
 	<div class="container" style="max-width: 540px">
 		<div>
-			<h3 style="text-align: center;">수혜자 등록</h3>
+			<h3 style="text-align: center;">수혜자 수정</h3>
 		</div>
 		<form method="post">
-		
-			<input type="text" name="TI_NAME" id="TI_NAME" placeholder="이름"
-				class="form-control"><br>
-			<div align="right">
-				<span id="nameMsg"></span>
-			</div>
-			<div class="form-group input-group">
-				<input type="text" name="TI_PHONE" id="TI_PHONE" placeholder="폰번호"
-					class="form-control"> <label>&nbsp;</label> 
-			</div>
+			<input type="hidden" name="TI_NO" class="form-control" value="${taker_update.TI_NO}"/>
+				
+				이름 : <input type="text" name="TI_NAME" value="${taker_update.TI_NAME}" class="form-control"><br>
+					<div align="right">
+						<span id="nameMsg"></span>
+					</div>
 			
-			<div class="form-group input-group">
-				<input type="text" name="TI_BIRTH" id="TI_BIRTH" placeholder="생년월일"
-					class="form-control"> <label>&nbsp;</label> 
-			</div>
+				번호 : <input type="text" name="TI_PHONE" value="${taker_update.TI_PHONE}" class="form-control"><br>
 			
-			<input type="text" name="TI_ADDRESS" placeholder="주소"
-				class="form-control"><br>
+				생년월일 : <input type="text" name="TI_BIRTH" value="${taker_update.TI_BIRTH}" class="form-control"><br>
+			
+				주소 : <input type="text" name="TI_ADDRESS" value="${taker_update.TI_ADDRESS}" class="form-control" ><br>
+			
+				이메일 : <input type="email" name="TI_EMAIL" value="${taker_update.TI_EMAIL}" class="form-control"><br> 
+			
+				카테고리 : 
 			<div class="form-group input-group">
-				<input type="email" name="TI_EMAIL" id="emTI_EMAILail" placeholder="이메일"
-					class="form-control"> <label>&nbsp;</label> 
-			</div>
-			<div class="form-group input-group">
-				<select name="CATE_NO" id="CATE_NO" class="form-control">
+			
+				<select name="CATE_NO" id="CATE_NO" class="form-control" >
 					<option value="1">국내 장애아동</option>
 					<option value="2">국내 위기가정</option>
 					<option value="3">국내 독거노인</option>
@@ -54,10 +49,10 @@
 				 </select>
 				<label>&nbsp;</label> 
 			</div>
-
 		
 			<input type="submit" class="btn btn-dark" id="btn_join" value="수혜자 등록">
 		</form>
+			<input type="button" class="btn btn-dark" value="수혜자 목록" onclick="history.back(-1)"/>
 	</div>
 
 
