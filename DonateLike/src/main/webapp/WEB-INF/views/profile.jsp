@@ -11,36 +11,7 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
 <!-- 전체 임시 css -->
 <style>
-.arrow_box {
-	position: relative;
-	background: #ffffff;
-	border: 2px solid #000000;
-}
 
-.arrow_box:after, .arrow_box:before {
-	bottom: 100%;
-	left: 50%;
-	border: solid transparent;
-	content: " ";
-	height: 0;
-	width: 0;
-	position: absolute;
-	pointer-events: none;
-}
-
-.arrow_box:after {
-	border-color: rgba(255, 255, 255, 0);
-	border-bottom-color: #ffffff;
-	border-width: 7px;
-	margin-left: -7px;
-}
-
-.arrow_box:before {
-	border-color: rgba(0, 0, 0, 0);
-	border-bottom-color: #000000;
-	border-width: 10px;
-	margin-left: -10px;
-}
 </style>
 </head>
 <body>
