@@ -28,7 +28,7 @@
 		WHERE TI_NO=#{TI_NO}
 	</update>
 	
-	<!-- 게시글 삭제 --> 
+	<!-- 수혜자 삭제 --> 
 	<delete id="takerDelete" parameterType="map" >
 		DELETE FROM taker_info 
 		WHERE TI_NO=#{TI_NO}

@@ -29,7 +29,7 @@ public class TakerManagementDao {
 	public int takerUpdate(Map<String, Object> map) {
 		return sessionTemplate.update("target.takerUpdate", map);
 	}
-	// 게시판 삭제
+	// 수혜자 삭제
 	public int takerDelete(Map<String, Object> map){
 		return sessionTemplate.delete("target.takerDelete", map);
 	}
