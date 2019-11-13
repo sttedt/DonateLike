@@ -2,19 +2,30 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="target">
+
+	<!-- 수혜자 데이터 디비로 보내기 -->
 	<insert id="takerInsert">
 		INSERT INTO taker_info (TI_NAME, TI_PHONE, TI_BIRTH, TI_ADDRESS, TI_EMAIL, CATE_NO)
 		VALUES (#{TI_NAME}, #{TI_PHONE}, #{TI_BIRTH}, #{TI_ADDRESS}, #{TI_EMAIL}, #{CATE_NO})
 	</insert>
 	
+	<!-- 수혜자 목록페이지 -->
 	<select id="takerList" resultType="map">
 		SELECT * FROM taker_info 
 		ORDER BY TI_NO DESC
 	</select>
 	
-	<!-- 수정페이지 -->
+	<!-- 수혜자 수정페이지 가기 -->
 	<select id="taker_update" resultType="map" parameterType="_int">
 		SELECT * FROM taker_info
 		 WHERE TI_NO = #{TI_NO}
 	</select>
+	
+	<!-- 수혜자 수정데이터 디비 보내기 -->
+	<update id="takerUpdate" >
+		UPDATE taker_info 
+		SET TI_NAME=#{TI_NAME}, TI_PHONE=#{TI_PHONE}, TI_BIRTH=#{TI_BIRTH}, TI_ADDRESS=#{TI_ADDRESS}, TI_EMAIL=#{TI_EMAIL}, CATE_NO=#{CATE_NO}
+		WHERE TI_NO=#{TI_NO}
+	</update>
+	
 </mapper>

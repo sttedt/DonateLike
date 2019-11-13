@@ -54,12 +54,16 @@
 						<td>
 							<a class="title" href="taker_update?TI_NO=${map.TI_NO}"	name="update_no">수정</a>
 						</td>
+						<td>
+							<a class="title" href="taker_delete?TI_NO=${map.TI_NO}"	name="delete_no">삭제</a>
+						</td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
 		<div>
 			<a href="taker_insert" class="btn btn-dark">수혜자등록</a>
+			
 		</div>
 	</div>
 	

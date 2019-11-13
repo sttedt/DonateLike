@@ -50,7 +50,7 @@
 				<label>&nbsp;</label> 
 			</div>
 		
-			<input type="submit" class="btn btn-dark" id="btn_join" value="수혜자 등록">
+			<input type="submit" class="btn btn-dark" value="수혜자 수정하기">
 		</form>
 			<input type="button" class="btn btn-dark" value="수혜자 목록" onclick="history.back(-1)"/>
 	</div>
