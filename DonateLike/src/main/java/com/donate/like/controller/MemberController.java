@@ -105,15 +105,13 @@ public class MemberController {
 			return "redirect:/profile";
 		}
 	}
-	
+	// 회원정보 상세페이지
 	@RequestMapping(value = "profile")
 	public String show(Model model, HttpSession ss) {
 		String DM_ID = (String) ss.getAttribute("SID");
 		model.addAttribute("pro", memberService.profile(DM_ID));
 		return "profile";
 	}
-	
-	
 	// 회원정보 수정페이지로 가기
 	@RequestMapping(value = "profile_update", method = RequestMethod.GET)
 	public String up(Model model, @RequestParam("DM_ID") String DM_ID) {
@@ -121,7 +119,6 @@ public class MemberController {
 		model.addAttribute("profile_update", memberService.profile_update(DM_ID));
 		return "profile_update";
 	}
-	
 	// 회원정보 수정 데이터를 디비로 보내기
 	@RequestMapping(value = "profile_update", method = RequestMethod.POST)
 	public String up(@RequestParam Map<String, Object> map, Model model, @RequestParam("DM_ID2") String DM_ID,
@@ -137,14 +134,12 @@ public class MemberController {
 		return "redirect:/profile?DM_ID=" + DM_ID;
 		// redirect: 경로설정
 	}
-	
 	// 아이디 찾기 폼
 	@RequestMapping(value = "find_id_form", method = RequestMethod.GET)
 	// param은 map을 받는다
 	public String find_id_form(Model model) {
 		return "find_id_form";
 	}
-		
 	// 아이디 찾기
 	@RequestMapping(value = "find_id_form", method = RequestMethod.POST)
 	public String find_id(HttpServletResponse response, @RequestParam("email") String email, Model md)

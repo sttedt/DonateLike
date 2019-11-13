@@ -24,11 +24,10 @@ public class MemberService {
 	public Map<String, Object> loginSelect(Map<String, Object> map) {
 		return memberDao.loginSelect(map);
 	}
-
+	// 회원정보 상세페이지
 	public Map<String, Object> profile(String DM_ID) {
 		return memberDao.profileOne(DM_ID);
 	}
-	
 	// 회원정보 수정 페이지
 	public Map<String, Object> profile_update(String DM_ID) {
 		return memberDao.profile_update(DM_ID);
@@ -37,7 +36,7 @@ public class MemberService {
 	public void memberUpdate(Map<String, Object> map) {
 		memberDao.memberUpdate(map);
 	}
-		// 아이디 찾기
+	// 아이디 찾기
 	public String find_id(HttpServletResponse response, String email) throws Exception {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();

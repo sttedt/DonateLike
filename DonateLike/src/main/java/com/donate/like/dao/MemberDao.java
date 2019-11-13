@@ -20,11 +20,10 @@ public class MemberDao {
 	public Map<String, Object> loginSelect(Map<String, Object> map) {
 		return ss.selectOne("donate_member.loginSelect", map);
 	}
-	
+	// 회원정보 상세페이지
 	public Map<String, Object> profileOne(String DM_ID) {
 		return ss.selectOne("donate_member.profileOne", DM_ID);
 	}
-	
 	// 회원정보 수정페이지
 	public Map<String, Object> profile_update(String DM_ID) {
 		return ss.selectOne("donate_member.profile_update", DM_ID);
@@ -33,7 +32,6 @@ public class MemberDao {
 	public int memberUpdate(Map<String, Object> map) {
 		return ss.update("donate_member.memberUpdate", map);
 	}		
-	
 	// 아이디 찾기
 	public String find_id(String email) throws Exception{
 		return ss.selectOne("donate_member.find_id", email);
