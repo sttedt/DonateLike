@@ -13,11 +13,12 @@ public class TakerManagementController {
 	@Autowired
 	TakerManagementService takerManagementService;
 	
-	@RequestMapping(value = "/TakerManagement", method = RequestMethod.GET)
+	@RequestMapping(value = "/taker_insert", method = RequestMethod.GET)
 	public String TakerManagement(Model model) {
 		
-		return "TakerManagement";
+		return "taker_insert";
 	}
+
 	
 	
 	

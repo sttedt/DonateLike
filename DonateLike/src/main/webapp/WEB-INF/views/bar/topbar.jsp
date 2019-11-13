@@ -46,7 +46,7 @@
 							</li>
 							<li><a href="#">수혜자 관리</a>
 								<ul>
-									<li><a href="taker_enroll">수혜자 등록</a></li>
+									<li><a href="taker_insert">수혜자 등록</a></li>
 									<li><a href="DonateLike_purpose">수혜자 수정</a></li>
 								</ul>
 							</li>
