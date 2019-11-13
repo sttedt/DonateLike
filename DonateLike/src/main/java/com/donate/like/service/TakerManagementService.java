@@ -29,5 +29,9 @@ public class TakerManagementService {
 	public void takerUpdate(Map<String, Object> map) {
 		takerManagementDao.takerUpdate(map);
 	}
+	// 게시판 삭제
+	public void takerDelete(Map<String, Object> map) {
+		takerManagementDao.takerDelete(map);
+	}
 
 }

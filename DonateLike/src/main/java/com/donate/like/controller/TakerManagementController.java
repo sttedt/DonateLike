@@ -63,16 +63,16 @@ public class TakerManagementController {
 		//redirect: 경로설정
 	}
 	
-//	// 수혜자 삭제 
-//	@RequestMapping(value="taker_delete" , method = RequestMethod.GET)
-//	public String del(@RequestParam Map<String, Object> map, 
-//			Model model,HttpServletRequest request, HttpSession httpSession) {
-//		takerManagementService.takerDelete(map);//데이터넘기기
-////		model.addAttribute("b_list", boardService.boardList()); 위에 보드에서 board.jsp 화면에서 데이터까지 나오게 되는 값
-//
-//		return "redirect:/taker_list";
-//		// 주소가 boardd?Brd_NO=815 에서 결과값이 board의 주소창으로 된다
-//	}
+	// 수혜자 삭제 
+	@RequestMapping(value="taker_delete" , method = RequestMethod.GET)
+	public String del(@RequestParam Map<String, Object> map, 
+			Model model,HttpServletRequest request, HttpSession httpSession) {
+		takerManagementService.takerDelete(map);//데이터넘기기
+//		model.addAttribute("b_list", boardService.boardList()); 위에 보드에서 board.jsp 화면에서 데이터까지 나오게 되는 값
+
+		return "redirect:/taker_list";
+		// 주소가 boardd?Brd_NO=815 에서 결과값이 board의 주소창으로 된다
+	}
 	
 	
 	
