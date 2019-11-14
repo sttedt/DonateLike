@@ -43,9 +43,14 @@ public class DonateController {
 	}
 	
 	@RequestMapping(value="Donate_detail", method = RequestMethod.GET)
-	public String list(Model model, HttpSession httpSession, @RequestParam Map<String, Object> map) {
+	public String list(Model model, HttpSession httpSession, @RequestParam Map<String, Object> map, HttpServletRequest request) {
 		String no = (String) httpSession.getAttribute("SID");
-		System.out.println("map : " + map);
+		if(no==null) {
+			request.setAttribute("type", "error");
+			request.setAttribute("msg", "로그인이 필요합니다");
+			request.setAttribute("url", "login");
+			return "bar/alert";
+		}
 		List<Map<String, Object>> dList = donateService.donateList(no);
 		model.addAttribute("list", dList);
 		

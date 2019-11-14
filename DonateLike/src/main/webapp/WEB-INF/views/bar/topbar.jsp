@@ -21,6 +21,7 @@
 			    <c:when test="${sessionScope.SID ne null}">
 					<div class="dropdown-menu" aria-labelledby="dropLogin">
 						<a class="dropdown-item" href="#">${sessionScope.SID} 님</a> 
+						<a class="dropdown-item" href="profile_check">개인정보 수정</a>
 						<a class="dropdown-item" href="logout">로그아웃</a> 
 						<a class="dropdown-item" href="DonateLike_Board">문의하기</a> 
 					</div>
@@ -41,7 +42,7 @@
 							<li><a href="adminMain">홈페이지 관리</a>
 								<ul>
 									<li><a href="DonateLike_Introduce_update">소개 수정</a></li>
-									<li><a href="#">대상 선정 수정</a></li>
+									<li><a href="DonateLike_TargetSelection_update">대상 선정 수정</a></li>
 								</ul>
 							</li>
 							<li><a href="#">수혜자 관리</a>
@@ -54,7 +55,7 @@
 							<li>
 								<a href="#" id="current">후원금 관리</a>
 								<ul>
-									<li><a href="DonateLike_TargetSelection">후원 내역</a></li>
+									<li><a href="admin_Donate_detail">후원 내역</a></li>
 									<li><a href="Donate_apply">후원</a></li>
 								</ul>
 							</li>
@@ -83,8 +84,8 @@
 							</li>
 							<li><a href="#">MyPage</a>
 								<ul>
-									<li><a href="profile_check">개인정보 수정</a></li>
-									<li><a href="#">기부상세내역</a></li>
+							
+									<li><a href="Donate_detail">기부상세내역</a></li>
 									<li><a href="#">기부 영수증</a></li>
 								</ul>
 							</li>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="admin">
+	<select id="donateList" resultType="map">
+		SELECT CATE_NO, AA_BANK, AA_DONATE, AA_DATE, DM_ID  FROM DONATE_ACCOUNT ORDER BY AA_NO DESC
+	</select>
+	
+</mapper>

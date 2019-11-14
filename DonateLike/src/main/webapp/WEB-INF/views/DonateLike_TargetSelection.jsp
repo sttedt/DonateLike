@@ -19,7 +19,7 @@
 	<jsp:include page="bar/topbar.jsp"></jsp:include>
 		<!-- 목차? 상위목록 표시 -->
 	<div style="text-align: right;  margin-right: 20px">
-		<a href="main" style="color:black; text-decoration: none;">Home</a> > <a href="DonateLike_Introduce" style="color:black; text-decoration: none;">대상 선정</a>	
+		<a href="main" style="color:black; text-decoration: none;">Home</a> > <a href="DonateLike_TargetSelection" style="color:black; text-decoration: none;">대상 선정</a>	
 	</div>
 	
 	<h1 style="text-align: center;">대상 선정</h1>

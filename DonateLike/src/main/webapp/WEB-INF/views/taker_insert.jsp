@@ -16,7 +16,10 @@
 <body>
 	<!-- 상단바 -->
 	<jsp:include page="bar/topbar.jsp"></jsp:include>
-
+	<!-- 목차? 상위목록 표시 -->
+	<div style="text-align: right;  margin-right: 20px">
+		<a href="main" style="color:black; text-decoration: none;">Home</a> > <a href="taker_insert" style="color:black; text-decoration: none;">수혜자 등록</a>	
+	</div>
 		
 	<div class="container" style="max-width: 540px">
 		<div>

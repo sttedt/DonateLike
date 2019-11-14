@@ -17,6 +17,11 @@
 <body>
 	<!-- 상단바 -->
 	<jsp:include page="bar/topbar.jsp"></jsp:include>
+	<!-- 목차? 상위목록 표시 -->
+	<div style="text-align: right;  margin-right: 20px">
+		<a href="main" style="color:black; text-decoration: none;">Home</a> > <a href="Donate_apply" style="color:black; text-decoration: none;">후원하기</a>	
+	</div>
+	
 	<!-- 게시판글쓰기 시작 -->
 	<div class="container">
 		<form action="Donate_apply" method = "post">

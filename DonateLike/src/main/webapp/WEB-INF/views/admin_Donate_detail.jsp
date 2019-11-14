@@ -18,7 +18,7 @@
 	<jsp:include page="bar/topbar.jsp"></jsp:include>
 		<!-- 목차? 상위목록 표시 -->
 	<div style="text-align: right;  margin-right: 20px">
-		<a href="main" style="color:black; text-decoration: none;">Home</a> > <a href="Donate_detail" style="color:black; text-decoration: none;">기부상세내역</a>	
+		<a href="main" style="color:black; text-decoration: none;">Home</a> > <a href="Donate_detail" style="color:black; text-decoration: none;">기부내역</a>	
 	</div>
 	<!-- 게시판 시작 -->
 	<div class="container" style="margin-top: 15px; z-index: -9999;" >
@@ -33,6 +33,7 @@
 					<th>은행</th>
 					<th>금액</th>
 					<th>날짜</th>
+					<th>ID</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -59,6 +60,7 @@
 						</td>
 						<td>${map.AA_DONATE}</td>
 						<td>${map.AA_DATE}</td>
+						<td>${map.DM_ID}</td>
 					</tr>
 				</c:forEach>
 			</tbody>
