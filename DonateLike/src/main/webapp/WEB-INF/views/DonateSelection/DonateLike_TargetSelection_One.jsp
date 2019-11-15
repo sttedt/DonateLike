@@ -23,7 +23,7 @@
 			<input type="button" class="btn btn-dark" value="목록" onclick="history.back(-1)"/>
 			<c:choose>
 			    <c:when test="${sessionScope.SID eq 'admin'}">
-					<a href="board_update_ready?B_NO=${detail.B_NO}" class="btn btn-dark" >수정</a>
+					<a href="DonateLike_TargetSelection_update?TS_NO=${DTSelectionOne.TS_NO}" class="btn btn-dark">수정</a>
 					<a href="board_delete?B_NO=${detail.B_NO}" class="btn btn-dark" >삭제</a>
 				</c:when>
 			</c:choose>

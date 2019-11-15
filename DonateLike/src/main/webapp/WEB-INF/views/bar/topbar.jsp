@@ -42,7 +42,8 @@
 							<li><a href="adminMain">홈페이지 관리</a>
 								<ul>
 									<li><a href="DonateLike_Introduce_update">소개 수정</a></li>
-									<li><a href="DonateLike_TargetSelection_update">대상 선정 수정</a></li>
+									<li><a href="DonateLike_TargetSelection_insert">대상 선정 등록</a></li>
+									<li><a href="DonateLike_TargetSelection">대상 선정</a></li>
 								</ul>
 							</li>
 							<li><a href="#">수혜자 관리</a>

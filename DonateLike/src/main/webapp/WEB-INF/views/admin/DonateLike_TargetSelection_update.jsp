@@ -16,7 +16,7 @@
 </head>
 <body>
 	<!-- 상단바 -->
-	<jsp:include page="bar/topbar.jsp"></jsp:include>
+	<jsp:include page="../bar/topbar.jsp"></jsp:include>
 		<div class="container" style="width: 500px">
 			<form action="DonateLike_TargetSelection_update" method="post" enctype='multipart/form-data'>
 				<div>
@@ -24,9 +24,9 @@
 					<hr>
 				</div>
 				대상선정 아래 표시 내용 : 
-				<input type="text"	name="TS_content" class="form-control" /> <br />
+				<input type="text"	name="TS_content" class="form-control" value="${DTSelectionOne.TS_CONTENT}"/> <br />
 				대상선정 상세 표시 내용 : 
-				<textarea rows="6" name="TS_detail_content" class="form-control" /></textarea><br />  
+				<textarea rows="6" name="TS_detail_content" class="form-control" />${DTSelectionOne.TS_DETAIL_CONTENT}</textarea><br />  
 				분야 수정: 
 				<select name="CATE_NO" id="CATE_NO" class="form-control">
 					<option value="1">국내 장애아동</option>
@@ -46,7 +46,7 @@
 		</div>
 		
 	<!-- 하단바 -->
-	<jsp:include page="bar/footer.jsp"></jsp:include>	
+	<jsp:include page="../bar/footer.jsp"></jsp:include>	
 </body>
 <script src='resources/js/jquery-3.3.1.min.js'></script>
 <script src="resources/js/popper.min.js"></script>
