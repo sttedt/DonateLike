@@ -17,7 +17,7 @@
 	<!-- 상단바 -->
 	<jsp:include page="../bar/topbar.jsp"></jsp:include>
 	
-		<div class="container">
+	<div class="container">
 		<div>
 			<h3 style="text-align: cneter;">대상선정 상세페이지</h3>
 			<input type="button" class="btn btn-dark" value="목록" onclick="history.back(-1)"/>
@@ -42,9 +42,6 @@
 				</tr>
 			</tbody>
 		</table>
-		<div>
-
-		</div>
 	</div>
 	
 	<!-- 하단바 -->
