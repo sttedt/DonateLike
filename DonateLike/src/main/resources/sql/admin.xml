@@ -6,4 +6,9 @@
 		SELECT CATE_NO, AA_BANK, AA_DONATE, AA_DATE, DM_ID  FROM DONATE_ACCOUNT ORDER BY AA_NO DESC
 	</select>
 	
+	<insert id="TargetSelectionupdate">
+			INSERT INTO TargetSelection (TS_CONTENT, CATE_NO, TS_IMG, TS_DETAIL_CONTENT)
+		VALUES (#{TS_content},#{CATE_NO}, #{img}, #{TS_detail_content})
+	</insert>
+	
 </mapper>

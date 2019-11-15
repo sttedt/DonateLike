@@ -50,10 +50,10 @@ public class BoardController {
 	}
 	
 	// 게시글 상세페이지
-		@RequestMapping(value="board_detail")
-		public String show(Model model, @RequestParam("B_NO") int B_NO) {
-			model.addAttribute("detail", boardService.boardOne(B_NO));
-			return "board_detail";
+	@RequestMapping(value="board_detail")
+	public String show(Model model, @RequestParam("B_NO") int B_NO) {
+		model.addAttribute("detail", boardService.boardOne(B_NO));
+		return "board_detail";
 	}
 		
 	// 게시글 수정페이지

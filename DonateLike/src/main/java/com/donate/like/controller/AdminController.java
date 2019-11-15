@@ -44,17 +44,15 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value = "DonateLike_TargetSelection_update", method = RequestMethod.GET)
-	public String store(Model model) {
+	public String TargetSelectionupdate(Model model) {
 		return "DonateLike_TargetSelection_update";
 	}
 
 	@RequestMapping(value = "DonateLike_TargetSelection_update", method = RequestMethod.POST)
-	public String storeUp(@RequestParam("file") List<MultipartFile> img, @RequestParam Map<String, Object> map, Model model, @RequestParam("tag_end") String tag_end) throws Exception {
+	public String TargetSelectionupdate(@RequestParam("file") List<MultipartFile> img, @RequestParam Map<String, Object> map, Model model) throws Exception {
 		
-		map.put("hash", tag_end);
-		
+		adminService.TargetSelectionupdate(map, img);
 		System.out.println("map : " + map);
-		adminService.takerInsert(map, img);
-		return "redirect:/home";
+		return "redirect:/DonateLike_TargetSelection";
 	}
 }

@@ -13,8 +13,8 @@ public class AdminDao {
 	@Autowired
 	SqlSessionTemplate sessionTemplate;
 	
-	public int takerInsert(Map<String, Object> map) {
-		return sessionTemplate.insert("admin.takerInsert",map);
+	public int TargetSelectionupdate(Map<String, Object> map) {
+		return sessionTemplate.insert("admin.TargetSelectionupdate",map);
 	}
 	
 	public List<Map<String, Object>> donateList(String no) {
@@ -22,3 +22,5 @@ public class AdminDao {
 	}
 	
 }
+
+
