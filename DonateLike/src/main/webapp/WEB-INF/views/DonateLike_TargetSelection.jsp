@@ -115,7 +115,7 @@
 				<c:forEach items="${s_list}" var="map">
 					<c:choose >
 						<c:when test="${map.CATE_NO eq '4'}">
-							<a href="storer?St_NO=${map.TS_NO}" style="margin-left: 10px;">
+							<a href="DonateLike_TargetSelection_One?TS_NO=${map.TS_NO}" style="margin-left: 10px;">
 								<div class="card mb-4 scale" >
 									<img class="card-img-top" src="http://sttedt.dothome.co.kr/img/${map.TS_IMG}" style= "height: 280px; width: 350px;"/>
 									<p class="card-header" style= "width: 350px; text-align: center; background:white;">
