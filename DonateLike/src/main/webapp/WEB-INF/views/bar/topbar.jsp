@@ -56,7 +56,6 @@
 								<a href="#" id="current">후원금 관리</a>
 								<ul>
 									<li><a href="admin_Donate_detail">후원 내역</a></li>
-									<li><a href="Donate_apply">후원</a></li>
 								</ul>
 							</li>
 							<li><a href="DonateLike_Board">문의 사항</a>
