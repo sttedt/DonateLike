@@ -40,71 +40,92 @@
 		<!-- 전체 -->
 		<div id="tab-1" class="tab-content current">
 			<div class="card-deck mb-3 " id="div_left" >
-				<a href="" style="margin-left: 10px;">
-					<div class="card mb-4 scale" >
-							<img class="card-img-top" src="" style= "height: 280px; width: 350px;"/>
-							<p class="card-header" style= "width: 350px; text-align: center; background:white;">
-								<span style="color:black; text-decoration: none;">aaaaaaaaa</span><br/>
-								<span style="color:black; text-decoration: none;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><br/>
-							</p>
-					</div>		
-				</a>
+				<c:forEach items="${s_list}" var="map">
+						<a href="DonateLike_TargetSelection_One?TS_NO=${map.TS_NO}" style="margin-left: 10px;">
+							<div class="card mb-4 scale" >
+								<img class="card-img-top" src="http://sttedt.dothome.co.kr/img/${map.TS_IMG}" style= "height: 280px; width: 350px;"/>
+								<p class="card-header" style= "width: 350px; text-align: center; background:white;">
+									<span style="color:black; text-decoration: none;">${map.TS_CONTENT}</span><br/>
+								</p>
+							</div>		
+						</a>
+				</c:forEach>
 			</div>
 		</div>
 		<!-- 국내 장애아동 -->
 		<div id="tab-2" class="tab-content">
 			<div class="card-deck mb-3 " id="div_left" >
-				<a href="" style="margin-left: 10px;">
-					<div class="card mb-4 scale" >
-							<img class="card-img-top" src="" style= "height: 280px; width: 350px;"/>
-							<p class="card-header" style= "width: 350px; text-align: center; background:white;">
-								<span style="color:black; text-decoration: none;">bbbbbbbbbbbbbbbbb</span><br/>
-								<span style="color:black; text-decoration: none;">bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</span><br/>
-							</p>
-					</div>		
-				</a>
+				<c:forEach items="${s_list}" var="map">
+					<c:choose >
+						<c:when test="${map.CATE_NO eq '1'}">
+							<a href="DonateLike_TargetSelection?TS_NO=${map.TS_NO}" style="margin-left: 10px;">
+								<div class="card mb-4 scale" >
+									<img class="card-img-top" src="http://sttedt.dothome.co.kr/img/${map.TS_IMG}" style= "height: 280px; width: 350px;"/>
+									<p class="card-header" style= "width: 350px; text-align: center; background:white;">
+										<span style="color:black; text-decoration: none;">${map.TS_CONTENT}</span><br/>
+									</p>
+								</div>		
+							</a>
+						</c:when>
+					</c:choose>
+				</c:forEach>
 			</div>
 		</div>
 		<!-- 국내 위기가정 -->
 		<div id="tab-3" class="tab-content">
 			<div class="card-deck mb-3 " id="div_left" >
-				<a href="" style="margin-left: 10px;">
-					<div class="card mb-4 scale" >
-						<img class="card-img-top" src="" style= "height: 280px; width: 350px;"/>
-						<p class="card-header" style= "width: 350px; text-align: center; background:white;">
-							<span style="color:black; text-decoration: none;">ccccccccccccccccccccc</span><br/>
-							<span style="color:black; text-decoration: none;">cccccccccccccccccccccccccccccccccccccc</span><br/>
-						</p>
-					</div>		
-				</a>
+				<c:forEach items="${s_list}" var="map">
+					<c:choose >
+						<c:when test="${map.CATE_NO eq '2'}">
+							<a href="DonateLike_TargetSelection?TS_NO=${map.TS_NO}" style="margin-left: 10px;">
+								<div class="card mb-4 scale" >
+									<img class="card-img-top" src="http://sttedt.dothome.co.kr/img/${map.TS_IMG}" style= "height: 280px; width: 350px;"/>
+									<p class="card-header" style= "width: 350px; text-align: center; background:white;">
+										<span style="color:black; text-decoration: none;">${map.TS_CONTENT}</span><br/>
+									</p>
+								</div>		
+							</a>
+						</c:when>
+					</c:choose>
+				</c:forEach>
 			</div>
 		</div>
 		<!-- 국내 독거노인 -->
 		<div id="tab-4" class="tab-content">
 			<div class="card-deck mb-3 " id="div_left" >
-				<a href="" style="margin-left: 10px;">
-					<div class="card mb-4 scale" >
-						<img class="card-img-top" src="" style= "height: 280px; width: 350px;"/>
-						<p class="card-header" style= "width: 350px; text-align: center; background:white;">
-							<span style="color:black; text-decoration: none;">dddddddddddddddddddd</span><br/>
-							<span style="color:black; text-decoration: none;">ddddddddddddddddddddddddddddddddddddddddddd</span><br/>
-						</p>
-					</div>		
-				</a>
+				<c:forEach items="${s_list}" var="map">
+					<c:choose >
+						<c:when test="${map.CATE_NO eq '3'}">
+							<a href="DonateLike_TargetSelection?TS_NO=${map.TS_NO}" style="margin-left: 10px;">
+								<div class="card mb-4 scale" >
+									<img class="card-img-top" src="http://sttedt.dothome.co.kr/img/${map.TS_IMG}" style= "height: 280px; width: 350px;"/>
+									<p class="card-header" style= "width: 350px; text-align: center; background:white;">
+										<span style="color:black; text-decoration: none;">${map.TS_CONTENT}</span><br/>
+									</p>
+								</div>		
+							</a>
+						</c:when>
+					</c:choose>
+				</c:forEach>
 			</div>
 		</div>
 			<!-- 국내 수재민 -->
 		<div id="tab-5" class="tab-content">
 			<div class="card-deck mb-3 " id="div_left" >
-				<a href="" style="margin-left: 10px;">
-					<div class="card mb-4 scale" >
-						<img class="card-img-top" src="" style= "height: 280px; width: 350px;"/>
-						<p class="card-header" style= "width: 350px; text-align: center; background:white;">
-							<span style="color:black; text-decoration: none;">eeeeeeeeeeeeeeeeeeee</span><br/>
-							<span style="color:black; text-decoration: none;">eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</span><br/>
-						</p>
-					</div>		
-				</a>
+				<c:forEach items="${s_list}" var="map">
+					<c:choose >
+						<c:when test="${map.CATE_NO eq '4'}">
+							<a href="storer?St_NO=${map.TS_NO}" style="margin-left: 10px;">
+								<div class="card mb-4 scale" >
+									<img class="card-img-top" src="http://sttedt.dothome.co.kr/img/${map.TS_IMG}" style= "height: 280px; width: 350px;"/>
+									<p class="card-header" style= "width: 350px; text-align: center; background:white;">
+										<span style="color:black; text-decoration: none;">${map.TS_CONTENT}</span><br/>
+									</p>
+								</div>		
+							</a>
+						</c:when>
+					</c:choose>
+				</c:forEach>
 			</div>
 		</div>
 	</div>

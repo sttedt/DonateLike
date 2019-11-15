@@ -21,7 +21,7 @@ public class AdminService {
 		return adminDao.donateList(no);
 	}
 	
-	public void takerInsert(Map<String, Object> map, List<MultipartFile> list) throws Exception {
+	public void TargetSelectionupdate(Map<String, Object> map, List<MultipartFile> list) throws Exception {
 		String img = "";
 		for(int i = 0 ; i < list.size() ; i++) {
 			MultipartFile temp = list.get(i);
@@ -34,7 +34,7 @@ public class AdminService {
 			}
 		}
 		map.put("img", img);
-		adminDao.takerInsert(map);
+		adminDao.TargetSelectionupdate(map);
 	}
 	public File saveFile(MultipartFile mFile) {
 		String savePath = "C:/Temp";

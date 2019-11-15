@@ -18,13 +18,15 @@
 	<!-- 상단바 -->
 	<jsp:include page="bar/topbar.jsp"></jsp:include>
 		<div class="container" style="width: 500px">
-			<form action="store" method="post" enctype='multipart/form-data'>
+			<form action="DonateLike_TargetSelection_update" method="post" enctype='multipart/form-data'>
 				<div>
-					<h3 style="text-align: center; margin-top: 20px;">정보수정</h3>
+					<h3 style="text-align: center; margin-top: 20px;">대상선정추가</h3>
 					<hr>
 				</div>
-				내용 : 
-				<input type="text"	name="TS_content" class="form-control" /> <br /> 
+				대상선정 아래 표시 내용 : 
+				<input type="text"	name="TS_content" class="form-control" /> <br />
+				대상선정 상세 표시 내용 : 
+				<textarea rows="6" name="TS_detail_content" class="form-control" /></textarea><br />  
 				분야 수정: 
 				<select name="CATE_NO" id="CATE_NO" class="form-control">
 					<option value="1">국내 장애아동</option>
