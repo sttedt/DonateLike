@@ -35,4 +35,17 @@ public class BoardDao {
 	public int boardDelete(Map<String, Object> map){
 		return sessionTemplate.delete("board.boardDelete", map);
 	}
+	// 리뷰 쓰기 페이지 불러오기
+	public Map<String, Object> reviewOne(int B_NO) {
+		return sessionTemplate.selectOne("board.reviewOne", B_NO);
+	}
+	// 리뷰 디비 저장
+	public int reviewInsert(Map<String, Object> map) {
+		return sessionTemplate.insert("board.reviewInsert", map);
+	}
+	// 리뷰 목록
+	public List<Map<String, Object>> reviewList(int B_NO) {
+		return sessionTemplate.selectList("board.reviewList", B_NO);
+	}
+	
 }

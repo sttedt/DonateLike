@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 	<title>DonateLike</title>
 	<link rel="stylesheet" href="resources/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="resources/css/donateLike.css?ver=1" />
+	<link rel="stylesheet" href="resources/css/donateLike.css?ver=2" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
 	<link rel="stylesheet" href="resources/css/owl.carousel.min.css" />
 	

@@ -17,6 +17,7 @@
 <body>
 	<!-- 상단바 -->
 	<jsp:include page="bar/topbar.jsp"></jsp:include>
+	
 	<!-- 게시판글쓰기 시작 -->
 	<div class="container">
 		<form action="DonateLike_Board_insert" method = "post">
