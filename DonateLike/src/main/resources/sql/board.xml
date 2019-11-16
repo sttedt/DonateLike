@@ -37,4 +37,23 @@
 		WHERE B_NO=#{B_NO}
 	</delete>
 	
+	<!-- 리뷰쓰기 페이지 불러오기 -->
+	<select id="reviewOne" resultType="map" parameterType="_int">
+		SELECT * FROM donate_board
+		 WHERE B_NO = #{B_NO}
+	</select>
+	
+	<!-- 리뷰쓰기 디비 저장 -->
+	<insert id="reviewInsert">
+		INSERT INTO review (B_NO, DM_ID, RE_CONTENT, RE_DATE )
+		VALUES ( #{B_NO}, #{DM_ID}, #{RE_CONTENT}, NOW())
+	</insert>
+		
+	<!-- 리뷰쓰기 디비 저장 -->
+	<select id="reviewList" resultType="map">
+		SELECT * FROM review
+		 WHERE B_NO = #{B_NO}
+		 ORDER BY RE_NO DESC
+	</select>
+	
 </mapper>

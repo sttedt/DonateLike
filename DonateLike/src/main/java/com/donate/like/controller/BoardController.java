@@ -1,8 +1,10 @@
 package com.donate.like.controller;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,6 +55,8 @@ public class BoardController {
 	@RequestMapping(value="board_detail")
 	public String show(Model model, @RequestParam("B_NO") int B_NO) {
 		model.addAttribute("detail", boardService.boardOne(B_NO));
+		List<Map<String, Object>> rList = boardService.reviewList(B_NO);
+		model.addAttribute("r_list", rList);
 		return "board_detail";
 	}
 		
@@ -99,4 +103,26 @@ public class BoardController {
 		return "redirect:/DonateLike_Board";
 		// 주소가 boardd?Brd_NO=815 에서 결과값이 board의 주소창으로 된다
 	}
+	
+	// 리뷰 쓰기 페이지 불러오기
+	@RequestMapping(value="review_write", method = RequestMethod.GET)
+	public String rev(Model model,HttpSession httpSession, HttpServletRequest request, 
+			 @RequestParam("B_NO") int B_NO ) {
+		
+		String no = (String) httpSession.getAttribute("SID");
+		System.out.println("no : " + no);
+		model.addAttribute("detail", boardService.reviewOne(B_NO));
+		
+		return "review_write";
+	}
+	
+	// 리뷰 데이터를 디비에 보내기
+	@RequestMapping(value="review_write", method = RequestMethod.POST)
+	public String re(@RequestParam Map<String, Object> map,@RequestParam("B_NO") int B_NO){
+		map.put("B_NO", B_NO);
+		System.out.println(" map :" + map);
+		boardService.reviewInsert(map);
+		return "redirect:/board_detail?B_NO="+B_NO;
+	}
+
 }
