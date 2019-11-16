@@ -18,7 +18,7 @@ import com.donate.like.service.MainService;
 @Controller
 public class MainController {
 	@Autowired
-	MainService mainServeric;
+	MainService mainService;
 	
 	
 //	메인페이지
@@ -42,14 +42,14 @@ public class MainController {
 	@RequestMapping(value = "/DonateLike_TargetSelection", method = RequestMethod.GET)
 	public String DonateLike_TargetSelection(Model model) {
 		//대상선정 목록 불러오기
-		List<Map<String,Object>> list = mainServeric.DTSelectionList();
+		List<Map<String,Object>> list = mainService.DTSelectionList();
 		model.addAttribute("s_list", list);
 		return "DonateLike_TargetSelection";
 	}
 	// 대상선정 상세페이지
 	@RequestMapping(value="DonateLike_TargetSelection_One")
 	public String DonateLike_TargetSelection_One(Model model, @RequestParam("TS_NO") int TS_NO) {
-		model.addAttribute("DTSelectionOne", mainServeric.DTSelectionOne(TS_NO));
+		model.addAttribute("DTSelectionOne", mainService.DTSelectionOne(TS_NO));
 		return "DonateSelection/DonateLike_TargetSelection_One";
 	}
 }

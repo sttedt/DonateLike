@@ -18,4 +18,8 @@ public class DonateDao {
 	public List<Map<String, Object>> donateList(String no) {
 		return sessionTemplate.selectList("donate.donateList", no);
 	}
+	
+	public String donateApply(String TS_NO) {
+		return sessionTemplate.selectOne("donate.donateApply", TS_NO);
+	}
 }

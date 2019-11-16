@@ -21,9 +21,15 @@ public class DonateController {
 	DonateService donateService;
 	// 후원하기 페이지
 	@RequestMapping(value = "/Donate_apply", method = RequestMethod.GET)
-	public String Donate_support(Model model, HttpSession httpSession, HttpServletRequest request) {
+	public String Donate_support(Model model, HttpSession httpSession, HttpServletRequest request, @RequestParam Map<String, Object> map) {
 		String no = (String) httpSession.getAttribute("SID");
-		
+		String TS_NO = (String) map.get("TS_NO"); 
+		// 대상선정 상세페이지에서 접속할때 구동된다
+		if(TS_NO != null) {
+			String cate = donateService.donateApply(TS_NO);
+			request.setAttribute("cate", cate);
+		}
+		//로그인 안하면 안됨
 		if(no==null) {
 			request.setAttribute("type", "error");
 			request.setAttribute("msg", "로그인이 필요합니다");
@@ -41,7 +47,7 @@ public class DonateController {
 		donateService.donateInsert(map);
 		return "redirect:Donate_detail";
 	}
-	
+	//기부 상세 내역
 	@RequestMapping(value="Donate_detail", method = RequestMethod.GET)
 	public String list(Model model, HttpSession httpSession, @RequestParam Map<String, Object> map, HttpServletRequest request) {
 		String no = (String) httpSession.getAttribute("SID");
