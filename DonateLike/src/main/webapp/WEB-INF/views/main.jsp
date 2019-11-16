@@ -25,7 +25,7 @@
 			font-size : 70px;
 			cursor: pointer;
 			font-weight: bolder;
-			top:41%;
+			top:33%;
 			opacity: 0.5;
 		}
 		.customNextBtn {left:5%;}
