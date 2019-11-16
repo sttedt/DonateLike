@@ -94,6 +94,5 @@
 				</c:choose>
 			</div>
 		</div>
-		<hr/>
 
 		
