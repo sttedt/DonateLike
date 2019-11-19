@@ -19,6 +19,7 @@
 	<jsp:include page="../bar/topbar.jsp"></jsp:include>
 		<div class="container" style="width: 500px">
 			<form action="DonateLike_TargetSelection_update" method="post" enctype='multipart/form-data'>
+			<input type="hidden" name="TS_NO" value="${DTSelectionOne.TS_NO}">
 				<div>
 					<h3 style="text-align: center; margin-top: 20px;">대상선정추가</h3>
 					<hr>

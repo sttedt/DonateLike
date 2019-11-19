@@ -12,6 +12,7 @@ import com.donate.like.dao.BoardDao;
 public class BoardService {
 	@Autowired
 	BoardDao boardDao;
+	
 	// 게시판 목록
 	public List<Map<String, Object>> boardList() {
 		return boardDao.boardList();
@@ -37,5 +38,36 @@ public class BoardService {
 	// 게시판 삭제
 	public void boardDelete(Map<String, Object> map) {
 		boardDao.boardDelete(map);
+	}
+	// 리뷰 쓰기 불러오기
+	public Map<String, Object> reviewOne(int B_NO) {
+//		boardDao.update(id); // 조회수 증가
+		return boardDao.reviewOne(B_NO);
+	}
+	// 리뷰 디비 저장
+	public void reviewInsert(Map<String, Object> map){
+		boardDao.reviewInsert(map);
+	}
+	// 리뷰 목록
+	public List<Map<String, Object>> reviewList(int B_NO) {
+		return boardDao.reviewList(B_NO);
+	}
+	// 리뷰 수정페이지
+	public Map<String, Object> getReview(Map<String, Object> map) {
+		return boardDao.getReview(map);
+	}
+	// 리뷰 수정데이터 넘기기
+	public void reviewUpdate(Map<String, Object> map) {
+		boardDao.reviewUpdate(map);
+	}
+
+	public void reviewDelete(Map<String, Object> map) {
+	
+		boardDao.reviewDelete(map);
+	}
+	
+	public Map<String, Object> reviewDeleteBackURL( Map<String, Object> map) {
+		return boardDao.reviewDeleteBackURL(map);
+	
 	}
 }

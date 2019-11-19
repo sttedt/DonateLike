@@ -11,4 +11,8 @@
 		SELECT CATE_NO, AA_BANK, AA_DONATE, AA_DATE FROM DONATE_ACCOUNT WHERE DM_ID = #{no} ORDER BY AA_NO DESC
 	</select>
 	
+	<select id="donateApply" resultType="String">
+		SELECT CATE_NO FROM TARGETSELECTION WHERE TS_NO = #{TS_no} 
+	</select>
+	
 </mapper>

@@ -7,8 +7,21 @@
 	</select>
 	
 	<insert id="TargetSelectionInsert">
-			INSERT INTO TargetSelection (TS_CONTENT, CATE_NO, TS_IMG, TS_DETAIL_CONTENT)
-		VALUES (#{TS_content},#{CATE_NO}, #{img}, #{TS_detail_content})
+		INSERT INTO TargetSelection (TS_CONTENT, CATE_NO, TS_IMG, TS_DETAIL_CONTENT)
+			VALUES (#{TS_content},#{CATE_NO}, #{img}, #{TS_detail_content})
 	</insert>
 	
+	<update id="TargetSelectionUpdate" parameterType="map">
+		UPDATE TargetSelection 
+			SET TS_CONTENT = #{TS_content}, TS_DETAIL_CONTENT = #{TS_detail_content}, 
+							CATE_NO =#{CATE_NO},
+							TS_IMG = #{img} 
+			WHERE TS_NO = #{TS_NO}
+	</update>
+	
+<!-- 	대상선정 삭제 -->
+	<delete id="TargetSelectionDelete" parameterType="map">
+		DELETE FROM TargetSelection 
+		WHERE TS_NO = #{TS_NO}
+	</delete>
 </mapper>

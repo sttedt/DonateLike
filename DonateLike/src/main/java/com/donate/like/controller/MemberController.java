@@ -27,7 +27,7 @@ public class MemberController {
 	@RequestMapping(value = "join", method = RequestMethod.GET)
 	// param은 map을 받는다
 	public String join(Model model) {
-		return "join";
+		return "member/join";
 	}
 	
 	// 회원가입 정보 보내기
@@ -46,7 +46,7 @@ public class MemberController {
 	@RequestMapping(value = "login", method = RequestMethod.GET)
 	// param은 map을 받는다
 	public String login(Model model) {
-		return "login";
+		return "member/login";
 	}
 	//로그인 데이터 조회후 처리
 	@RequestMapping(value = "login", method = RequestMethod.POST)
@@ -88,7 +88,7 @@ public class MemberController {
 	// 회원정보 확인
 	@RequestMapping(value = "profile_check", method = RequestMethod.GET)
 	public String profile_check_get(Model model, HttpSession httpsession) {
-		return "profile_check";
+		return "member/profile_check";
 	}
 	
 	@RequestMapping(value = "profile_check", method = RequestMethod.POST)
@@ -110,14 +110,14 @@ public class MemberController {
 	public String show(Model model, HttpSession ss) {
 		String DM_ID = (String) ss.getAttribute("SID");
 		model.addAttribute("pro", memberService.profile(DM_ID));
-		return "profile";
+		return "member/profile";
 	}
 	// 회원정보 수정페이지로 가기
 	@RequestMapping(value = "profile_update", method = RequestMethod.GET)
 	public String up(Model model, @RequestParam("DM_ID") String DM_ID) {
 
 		model.addAttribute("profile_update", memberService.profile_update(DM_ID));
-		return "profile_update";
+		return "member/profile_update";
 	}
 	// 회원정보 수정 데이터를 디비로 보내기
 	@RequestMapping(value = "profile_update", method = RequestMethod.POST)
@@ -138,7 +138,7 @@ public class MemberController {
 	@RequestMapping(value = "find_id_form", method = RequestMethod.GET)
 	// param은 map을 받는다
 	public String find_id_form(Model model) {
-		return "find_id_form";
+		return "member/find_id_form";
 	}
 	// 아이디 찾기
 	@RequestMapping(value = "find_id_form", method = RequestMethod.POST)
@@ -146,7 +146,7 @@ public class MemberController {
 			throws Exception {
 		md.addAttribute("id", memberService.find_id(response, email));
 		System.out.println("email : " + email);
-		return "find_id";
+		return "member/find_id";
 	}
 		
 	

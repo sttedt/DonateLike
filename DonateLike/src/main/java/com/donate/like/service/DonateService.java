@@ -19,5 +19,10 @@ public class DonateService {
 	public List<Map<String, Object>> donateList(String no) {
 		return donateDao.donateList(no);
 	}
+	public String donateApply(String TS_NO) {
+		return donateDao.donateApply(TS_NO);
+	}
+
+
 
 }

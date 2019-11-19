@@ -31,19 +31,20 @@ public class AdminController {
  		
  		return "adminMain";
  	}
+ 	//관리자 문의하기 불러오기
  	@RequestMapping(value = "/adminBoard", method = RequestMethod.GET)
  	public String adminBoard( Model model) {
  		
- 		return "adminBoard";
+ 		return "admin/adminBoard";
  	}
- 	
+ 	//관리자 기부내역 불러오기
 	@RequestMapping(value="admin_Donate_detail", method = RequestMethod.GET)
 	public String list(Model model, HttpSession httpSession, @RequestParam Map<String, Object> map, HttpServletRequest request) {
 		String no = (String) httpSession.getAttribute("SID");
 		List<Map<String, Object>> dList = adminService.donateList(no);
 		model.addAttribute("list", dList);
 		
-		return "admin_Donate_detail";
+		return "admin/adadmin_Donate_detail";
 	}
 	// 대상선정 추가
 	@RequestMapping(value = "DonateLike_TargetSelection_insert", method = RequestMethod.GET)
@@ -64,5 +65,24 @@ public class AdminController {
 		model.addAttribute("DTSelectionOne", mainService.DTSelectionOne(TS_NO));
 		return "admin/DonateLike_TargetSelection_update";
 	}
+	
+	// 대상선정 수정 업데이트
+	@RequestMapping(value ="DonateLike_TargetSelection_update", method = RequestMethod.POST)
+	public String TargetSelectionUpdate(
+			Model model, @RequestParam("TS_NO")int TS_NO,@RequestParam Map<String, Object> map, @RequestParam("file") List<MultipartFile> img) throws Exception {
+		adminService.TargetSelectionUpdate(map, img);
+		System.out.println("map : " + map);
+		return "redirect:/DonateLike_TargetSelection_One?TS_NO="+TS_NO;
+	}
+	
+	//대상수정 삭제
+	@RequestMapping(value ="DonateLike_TargetSelection_delete", method = RequestMethod.GET)
+	public String TargetSelectionDelete(Model model, @RequestParam("TS_NO")int TS_NO, @RequestParam Map<String, Object> map){
+		adminService.TargetSelectionDelete(map);
+		return "redirect:/DonateLike_TargetSelection";
+	}
+	
+	
+
 	
 }

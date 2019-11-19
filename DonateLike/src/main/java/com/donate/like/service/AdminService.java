@@ -21,6 +21,7 @@ public class AdminService {
 		return adminDao.donateList(no);
 	}
 	
+	// 대상선정 파일 업로드 
 	public void TargetSelectionInsert(Map<String, Object> map, List<MultipartFile> list) throws Exception {
 		String img = "";
 		for(int i = 0 ; i < list.size() ; i++) {
@@ -36,6 +37,30 @@ public class AdminService {
 		map.put("img", img);
 		adminDao.TargetSelectionInsert(map);
 	}
+	
+	//대상선정 파일 업데이트
+	public void TargetSelectionUpdate(Map<String, Object> map, List<MultipartFile> list) throws Exception{
+		String img = "";
+		for(int i = 0 ; i < list.size() ; i++) {
+			MultipartFile temp = list.get(i);
+			String fileName = storeFile(temp);
+			
+			if(i == 0) {
+				img += fileName;
+			}else {
+				img += "," + fileName;
+			}
+		}
+		map.put("img", img);
+		adminDao.TargetSelectionUpdate(map);
+	}
+	//대상선정 삭제
+	public void TargetSelectionDelete(Map<String, Object> map) {
+		adminDao.TargetSelectionDelete(map);
+	}
+	
+	
+	//파일전송 관련 메소드  --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	public File saveFile(MultipartFile mFile) {
 		String savePath = "C:/Temp";
 		File saveDir = new File(savePath);
@@ -77,6 +102,8 @@ public class AdminService {
 		String hostDir = "/html/img/";
 		ftp.deleteFile(fileName, hostDir);
 	}
+	//파일전송 관련 메소드  --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 }
 
