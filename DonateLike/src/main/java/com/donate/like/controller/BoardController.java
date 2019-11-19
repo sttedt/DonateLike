@@ -151,7 +151,7 @@ public class BoardController {
 		
 		boardService.reviewUpdate(map);
 		
-		return "redirect:/board/board_detail?B_NO="+B_NO;
+		return "redirect:/board_detail?B_NO="+B_NO;
 	}
 	// 리뷰 삭제
 	@RequestMapping(value="reviewd", method = RequestMethod.GET)
