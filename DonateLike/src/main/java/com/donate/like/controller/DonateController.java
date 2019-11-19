@@ -36,7 +36,7 @@ public class DonateController {
 			request.setAttribute("url", "login");
 			return "bar/alert";
 		}
-		return "donate/Donate_apply";
+		return "Donate/Donate_apply";
 	}
 	// 후원하기 페이지 내용 DB 저장
 	@RequestMapping(value = "/Donate_apply", method = RequestMethod.POST)
@@ -60,6 +60,6 @@ public class DonateController {
 		List<Map<String, Object>> dList = donateService.donateList(no);
 		model.addAttribute("list", dList);
 		
-		return "donate/Donate_detail";
+		return "Donate/Donate_detail";
 	}
 }
