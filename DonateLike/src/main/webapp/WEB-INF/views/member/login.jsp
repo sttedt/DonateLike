@@ -17,7 +17,7 @@
 	<!-- 상단바 -->
 	<jsp:include page="../bar/topbar.jsp"></jsp:include>
 	<!-- 로그인시작 -->
-	<div class="DonateLike_Card_Center" style="max-width: 500px; " align="center">	
+	<div class="DonateLike_Card_Center" style="max-width: 500px; margin-top:150px;" align="center">	
 		<div>
 			<h3 style="text-align: center; ">로그인</h3>
 		</div>
