@@ -39,7 +39,7 @@ public class BoardController {
 			request.setAttribute("type", "error");
 			request.setAttribute("msg", "로그인이 필요합니다");
 			request.setAttribute("url", "login");
-			return "alert";
+			return "bar/alert";
 		}
 		return "board/DonateLike_Board_insert";
 	}
@@ -74,7 +74,7 @@ public class BoardController {
 			request.setAttribute("type", "error");
 			request.setAttribute("msg", "로그인이 필요합니다");
 			request.setAttribute("url", "login");
-			return "alert";
+			return "bar/alert";
 		}
 		return "board/board_update";
 	}
@@ -104,7 +104,7 @@ public class BoardController {
 			request.setAttribute("type", "error");
 			request.setAttribute("msg", "로그인이 필요합니다");
 			request.setAttribute("url", "login");
-			return "alert";
+			return "bar/alert";
 		}
 		return "redirect:/DonateLike_Board";
 		// 주소가 boardd?Brd_NO=815 에서 결과값이 board의 주소창으로 된다

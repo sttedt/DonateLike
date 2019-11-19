@@ -8,6 +8,7 @@
 	<title>DonateLike</title>
 	<link rel="stylesheet" href="resources/css/bootstrap.css" />
 	<link rel="stylesheet" href="resources/css/donateLike.css" />
+	<link rel="stylesheet" href="resources/css/ui.intro.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
 </head>
 <body>
@@ -19,61 +20,136 @@
 	</div>
 	
 	<!-- 소개시작 -->
-	<h1 style="text-align: center;" id="intro">기부니 좋아 소개</h1>
-	<br/>
-	
-	<h5 style="text-align: center;" id="1line_content"> 기부니 좋아는 블록체인을 통해 신뢰할수 있는 투명한 기부를 위해 노력합니다.</h5>
 	<br/>
 	
 	<div class="DonateLike_Card_Center">
-		<h6 id="smail_content"> 후원금 이렇게 사용됩니다.</h6>
-		<div class="card-deck mb-3 " id="div_left" >
-			<a href="" style="margin-left: 10px;">
-				<div class="card mb-4 scale" >
-						<img class="card-img-top" src="" style= "height: 280px; width: 350px;"/>
-						<p class="card-header" style= "width: 350px; text-align: center; background:white;">
-							<span style="color:black; text-decoration: none;">aaaaaaaaa</span><br/>
-							<span style="color:black; text-decoration: none;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><br/>
-						</p>
-				</div>		
-			</a>
-			<a href="" style="margin-left: 10px;">
-				<div class="card mb-4 scale" >
-						<img class="card-img-top" src="" style= "height: 280px; width: 350px;"/>
-						<p class="card-header" style= "width: 350px; text-align: center; background:white;">
-							<span style="color:black; text-decoration: none;">aaaaaaaaa</span><br/>
-							<span style="color:black; text-decoration: none;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><br/>
-						</p>
-				</div>		
-			</a>
-			<a href="" style="margin-left: 10px;">
-				<div class="card mb-4 scale" >
-						<img class="card-img-top" src="" style= "height: 280px; width: 350px;"/>
-						<p class="card-header" style= "width: 350px; text-align: center; background:white;">
-							<span style="color:black; text-decoration: none;">aaaaaaaaa</span><br/>
-							<span style="color:black; text-decoration: none;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><br/>
-						</p>
-				</div>		
-			</a>
-			<a href="" style="margin-left: 10px;">
-				<div class="card mb-4 scale" >
-						<img class="card-img-top" src="" style= "height: 280px; width: 350px;"/>
-						<p class="card-header" style= "width: 350px; text-align: center; background:white;">
-							<span style="color:black; text-decoration: none;">aaaaaaaaa</span><br/>
-							<span style="color:black; text-decoration: none;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><br/>
-						</p>
-				</div>		
-			</a>
-			<a href="" style="margin-left: 10px;">
-				<div class="card mb-4 scale" >
-						<img class="card-img-top" src="" style= "height: 280px; width: 350px;"/>
-						<p class="card-header" style= "width: 350px; text-align: center; background:white;">
-							<span style="color:black; text-decoration: none;">aaaaaaaaa</span><br/>
-							<span style="color:black; text-decoration: none;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><br/>
-						</p>
-				</div>		
-			</a>
+		<h1 style="text-align: center;" id="intro">기부니 좋아 소개</h1>
+		<!-- sub contents s -->
+		<div class="sub_contents wide">
+			<div class="about_wrapper">
+				<div class="hd">
+					<h5 style="text-align: center;" id="1line_content"> 기부니 좋아는 블록체인을 통해 신뢰할수 있는 투명한 기부를 위해 노력합니다.</h5>
+				</div>
+				<div class="sec_about_list">
+					<ul style=" list-style:none;">
+						<li>
+							<div class="item">
+								<img src="resources/img/img_about_01.jpg"/>
+								<strong>신뢰받는 밀알</strong>
+								<p>투명성과 전문성 , 순수성, 나눔 확산</p>
+							</div>
+						</li>
+						<li>
+							<div class="item">
+								<img src="resources/img/img_about_02.jpg"/>
+								<strong>선도하는 밀알</strong>
+								<p>지속적 연구, 열정적 도전, 새로운 역할 수행</p>
+							</div>
+						</li>
+						<li>
+							<div class="item">
+								<img src="resources/img/img_about_03.jpg"/>
+								<strong>협력하는 밀알</strong>
+								<p>국내외 사회적약자의 권리와 자립</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="about_banner"></div>
+				<div class="sec_vision">
+					<div class="item">
+						<div class="hd">
+							<h3>MISSION</h3>
+						</div>
+						<div class="desc_img">
+							<img src=" " alt="Miral mission"/>
+							<p class="blind">
+								기독교　정신을 바탕으로
+								소외된 이웃과 더불어 살아가는
+								완전한 사회통합을 이룬다.
+							</p>
+						</div>
+					</div>
+					<div class="item">
+						<div class="hd">
+							<h3>VISION</h3>
+						</div>
+						<div class="desc_img">
+							<img src="" alt="Miral Vision"/>
+							<p class="blind">
+								생애주기별, 자립복지, 장애통합 : Glocal(Global + Local의 합성어) 모델구현
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="sec_spirit">
+					<div class="hd">
+						<h3>밀알정신</h3>
+					</div>
+					<div class="spirit_list">
+						<ul style=" list-style:none;">
+							<li>
+								<span class="sp_about"></span>
+								<strong>겸손</strong>
+								<p>소외되고 고통 받는 사람을<br />
+									섬기기 위해 자기를 비우고 낮춥니다.</p>
+							</li>
+							<li>
+								<span class="sp_about"></span>
+								<strong>진실</strong>
+								<p>진실하고 공정하고 투명하게<br />
+									봉사합니다.</p>
+							</li>
+							<li>
+								<span class="sp_about"></span>
+								<strong>존중</strong>
+								<p>사람을 소중하게 여기고<br />
+									자기계발과 환경변화를 추구합니다.</p>
+							</li>
+							<li>
+								<span class="sp_about"></span>
+								<strong>옹호</strong>
+								<p>사회적 약자의 권익을<br />
+									옹호하고 대변합니다.</p>
+							</li>
+							<li>
+								<span class="sp_about"></span>
+								<strong>사랑</strong>
+								<p>희생과 인내로 나눔을<br />
+									실천합니다.</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="sec_ci">
+					<div class="cont_ci">
+						<div class="ci_area">
+							<img src="" alt="밀알복지재단" />
+						</div>
+						<div class="ci_info">
+							<ul style=" list-style:none;">
+								<li>
+									<span class="color"></span>
+									<strong>온 지구에 가득함</strong>
+									<p>장애인을 교회와 사회에 바로 알리는 계몽</p>
+								</li>
+								<li>
+									<span class="color"></span>
+									<strong>그리스도의 정신</strong>
+									<p>뜨거운 마음으로 사랑을 실천하는 영성</p>
+								</li>
+								<li>
+									<span class="color"></span>
+									<strong>사회복지</strong>
+									<p>순결한 마음으로 행하는 봉사</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
+		<!--// sub contents e -->
 	</div>
 	
 	<c:if test="${sessionScope.SID eq 'admin' }">
