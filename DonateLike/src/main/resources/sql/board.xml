@@ -49,11 +49,34 @@
 		VALUES ( #{B_NO}, #{DM_ID}, #{RE_CONTENT}, NOW())
 	</insert>
 		
-	<!-- 리뷰쓰기 디비 저장 -->
+	<!-- 리뷰 목록 -->
 	<select id="reviewList" resultType="map">
 		SELECT * FROM review
 		 WHERE B_NO = #{B_NO}
 		 ORDER BY RE_NO DESC
+	</select>
+	
+	<!-- 리뷰 수정 페이지 -->
+	<select id="getReview" resultType="map" parameterType="map">
+		SELECT DB.DM_ID DD_ID, RE.RE_NO RR_NO, RE.RE_CONTENT RR_CONTENT, RE.DM_ID RR_ID, DB.B_NO DD_NO 
+		   FROM DONATE_BOARD DB,
+		   (SELECT * FROM REVIEW WHERE RE_NO = #{RE_NO}) RE 
+		   WHERE DB.B_NO = RE.B_NO
+	</select>
+	
+	<update id="reviewUpdate" parameterType="map" >
+		UPDATE review 
+		SET RE_CONTENT=#{RE_CONTENT}
+		WHERE RE_NO=#{RE_NO}
+	</update>
+	<!-- 리뷰 삭제 -->
+	<delete id="reviewDelete" parameterType="map" >
+		DELETE FROM review 
+		WHERE RE_NO=#{RE_NO}
+	</delete>
+	
+	<select id="reviewDeleteBackURL" resultType="map" parameterType="map" >
+		SELECT B_NO FROM review WHERE RE_NO = #{RE_NO}
 	</select>
 	
 </mapper>

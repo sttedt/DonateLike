@@ -5,7 +5,6 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.donate.like.dao.BoardDao;
 
@@ -52,5 +51,23 @@ public class BoardService {
 	// 리뷰 목록
 	public List<Map<String, Object>> reviewList(int B_NO) {
 		return boardDao.reviewList(B_NO);
+	}
+	// 리뷰 수정페이지
+	public Map<String, Object> getReview(Map<String, Object> map) {
+		return boardDao.getReview(map);
+	}
+	// 리뷰 수정데이터 넘기기
+	public void reviewUpdate(Map<String, Object> map) {
+		boardDao.reviewUpdate(map);
+	}
+
+	public void reviewDelete(Map<String, Object> map) {
+	
+		boardDao.reviewDelete(map);
+	}
+	
+	public Map<String, Object> reviewDeleteBackURL( Map<String, Object> map) {
+		return boardDao.reviewDeleteBackURL(map);
+	
 	}
 }
