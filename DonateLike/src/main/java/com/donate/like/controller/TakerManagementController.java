@@ -23,7 +23,7 @@ public class TakerManagementController {
 	@RequestMapping(value = "taker_insert", method = RequestMethod.GET)
 	public String TakerManagement(Model model) {
 		
-		return "taker_insert";
+		return "taker/taker_insert";
 	}
 	
 	// 수혜자 데이터 디비로 보내기
@@ -40,7 +40,7 @@ public class TakerManagementController {
 	public String taker_list_method(Model model) {
 		model.addAttribute("t_list", takerManagementService.takerList());
 		
-		return "taker_list";
+		return "taker/taker_list";
 	}
 	
 	// 수혜자 수정 페이지로 가기위한 코드
@@ -49,7 +49,7 @@ public class TakerManagementController {
 		model.addAttribute("taker_update", takerManagementService.taker_update(TI_NO));
 		String no = (String) httpSession.getAttribute("SID");
 		
-		return "taker_update";
+		return "taker/taker_update";
 	}
 	
 	// 수혜자 수정 후 디비에 보내는 코드

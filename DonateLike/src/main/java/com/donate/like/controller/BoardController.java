@@ -28,7 +28,7 @@ public class BoardController {
 	public String list(Model model) {
 		model.addAttribute("b_list", boardService.boardList());
 		
-		return "DonateLike_Board";
+		return "board/DonateLike_Board";
 	}
 	// 게시글 쓰기
 	@RequestMapping(value="DonateLike_Board_insert", method = RequestMethod.GET)
@@ -41,7 +41,7 @@ public class BoardController {
 			request.setAttribute("url", "login");
 			return "alert";
 		}
-		return "DonateLike_Board_insert";
+		return "board/DonateLike_Board_insert";
 	}
 	
 	// 게시글 데이터베이스 저장
@@ -61,7 +61,7 @@ public class BoardController {
 		model.addAttribute("r_list", rList);
 		System.out.println("rlist:"+ rList);
 		System.out.println("B_NO : " + B_NO);
-		return "board_detail";
+		return "board/board_detail";
 	}
 		
 	// 게시글 수정페이지
@@ -76,7 +76,7 @@ public class BoardController {
 			request.setAttribute("url", "login");
 			return "alert";
 		}
-		return "board_update";
+		return "board/board_update";
 	}
 	
 	
@@ -119,7 +119,7 @@ public class BoardController {
 		System.out.println("no : " + no);
 		model.addAttribute("detail", boardService.reviewOne(B_NO));
 		
-		return "review_write";
+		return "review/review_write";
 	}
 	
 	// 리뷰 데이터를 디비에 보내기
@@ -139,7 +139,7 @@ public class BoardController {
 		System.out.println("map :"+map);
 		System.out.println("tmp:"+tmp);
 		model.addAttribute("data", tmp);
-		return "review_update";
+		return "review/review_update";
 	}
 	
 	// 리뷰 수정데이터디비 보내기
@@ -151,7 +151,7 @@ public class BoardController {
 		
 		boardService.reviewUpdate(map);
 		
-		return "redirect:/board_detail?B_NO="+B_NO;
+		return "redirect:/board/board_detail?B_NO="+B_NO;
 	}
 	// 리뷰 삭제
 	@RequestMapping(value="reviewd", method = RequestMethod.GET)

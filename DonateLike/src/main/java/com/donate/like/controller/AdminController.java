@@ -35,7 +35,7 @@ public class AdminController {
  	@RequestMapping(value = "/adminBoard", method = RequestMethod.GET)
  	public String adminBoard( Model model) {
  		
- 		return "adminBoard";
+ 		return "admin/adminBoard";
  	}
  	//관리자 기부내역 불러오기
 	@RequestMapping(value="admin_Donate_detail", method = RequestMethod.GET)
@@ -44,7 +44,7 @@ public class AdminController {
 		List<Map<String, Object>> dList = adminService.donateList(no);
 		model.addAttribute("list", dList);
 		
-		return "admin_Donate_detail";
+		return "admin/adadmin_Donate_detail";
 	}
 	// 대상선정 추가
 	@RequestMapping(value = "DonateLike_TargetSelection_insert", method = RequestMethod.GET)

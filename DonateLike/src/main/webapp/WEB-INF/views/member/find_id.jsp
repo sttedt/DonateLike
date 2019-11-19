@@ -15,37 +15,36 @@
 </head>
 <body>
 	<!-- 상단바 -->
-	<jsp:include page="bar/topbar.jsp"></jsp:include>
+	<jsp:include page="../bar/topbar.jsp"></jsp:include>
 	
-		<div class="container" style="margin-top: 150px; max-width: 540px;">
+	<div class="container" style="margin-top: 150px; max-width: 540px;">
 		<div>
-			<h3 style="text-align: center;">아이디찾기</h3>
+			<h3 style="text-align: center;">아이디찾기 검색결과</h3>
 		</div>
-
-		<form method="post">
-
-			<p>
-				<label>Email</label> <input class="form-control" type="text"
-					id="email" name="email" required>
-			</p>
-
+		<br>
+		<div>
+			<h4>아이디 : ${ id }</h4>
 			<p class="w3-center">
-				<button type="submit" id=findBtn
-					class="btn btn-dark" style="width: 512px; height: 47px;">찾기</button>
-				
+				<button type="button" id=loginBtn
+					class="btn btn-dark" style="width: 512px; height: 47px;">로그인</button>
 				<button type="button" onclick="history.go(-1);"
 					class="btn btn-dark" style="width: 512px; height: 47px; margin-top: 10px;">취소</button>
 			</p>
-
-		</form>
+		</div>
+		<a class="dropdown-item" href="find_pw_form" style="text-align: center;">비밀번호 변경</a>
 	</div>
 	
 	<!-- 하단바 -->
-	<jsp:include page="bar/footer.jsp"></jsp:include>	
+	<jsp:include page="../bar/footer.jsp"></jsp:include>	
 </body>
 <script src='resources/js/jquery-3.3.1.min.js'></script>
 <script src="resources/js/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script>
-
+	$(function() {
+		$("#loginBtn").click(function() {
+			location.href = '../login';
+		})
+	})
+ 
 </script>

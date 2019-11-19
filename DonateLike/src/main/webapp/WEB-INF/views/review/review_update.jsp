@@ -15,29 +15,30 @@
 </head>
 <body>
 	<!-- 상단바 -->
-	<jsp:include page="bar/topbar.jsp"></jsp:include>
+	<jsp:include page="../bar/topbar.jsp"></jsp:include>
 
 		<div class="container">
-			<form action="review_write" method = "post" enctype='multipart/form-data'>
+			<form action="review_update" method = "post" enctype='multipart/form-data'>
 				<div>
 				 <h3 style="text-align: center; color: #ffc107">
-						${detail.DM_ID} 님의 
+						${data.DD_ID} 님의 
 					</h3>
 					<h3 style="text-align: center; color: #ffc107">
-						${detail.B_TITLE}
+						${data.DD_TITLE}
 					</h3>
 					<h3 style="text-align: center;">
-						에 대한 리뷰
+						에 대한 리뷰 수정
 					</h3>
 				</div>	
 	
 			<br /> 
-			<input type="hidden" name="B_NO" class="form-control" value="${detail.B_NO}"/>
+			<input type="hidden" name="B_NO" class="form-control" value="${data.DD_NO}"/>
+			<input type="hidden" name="RE_NO" class="form-control" value="${data.RR_NO}"/>
 			<br />
 			
 			작성자 :<input type="text" name="DM_ID" value="${sessionScope.SID}" class="form-control" readonly="readonly"/>
 			<br />
-			내용 : <textarea rows="6" name="RE_CONTENT" class="form-control" >${detail.DM_ID} 님</textarea>
+			내용 : <textarea rows="6" name="RE_CONTENT" class="form-control" >${data.RR_CONTENT} </textarea>
 			<br /> 
 		
 			<input type="submit" value="리뷰쓰기" class="btn btn-primary"/>
@@ -45,7 +46,7 @@
 	</div>
 	
 	<!-- 하단바 -->
-	<jsp:include page="bar/footer.jsp"></jsp:include>	
+	<jsp:include page="../bar/footer.jsp"></jsp:include>	
 </body>
 <script src='resources/js/jquery-3.3.1.min.js'></script>
 <script src="resources/js/popper.min.js"></script>

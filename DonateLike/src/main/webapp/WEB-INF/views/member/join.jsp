@@ -18,7 +18,7 @@
 	</style>
 </head>
 <body>
-	<jsp:include page="bar/topbar.jsp"></jsp:include>
+	<jsp:include page="../bar/topbar.jsp"></jsp:include>
 	
 	
 	<div class="container" style="max-width: 540px">
@@ -85,6 +85,7 @@
 			<input type="submit" class="btn btn-dark" id="btn_join" value="회원가입">
 		</form>
 	</div>
+	<jsp:include page="../bar/footer.jsp"></jsp:include>
 
 <script src='resources/js/jquery-3.3.1.min.js'></script>
 <script src="resources/js/popper.min.js"></script>

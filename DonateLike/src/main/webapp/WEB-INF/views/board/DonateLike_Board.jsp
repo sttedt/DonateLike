@@ -15,60 +15,46 @@
 </head>
 <body>
 	<!-- 상단바 -->
-	<jsp:include page="bar/topbar.jsp"></jsp:include>
+	<jsp:include page="../bar/topbar.jsp"></jsp:include>
 		<!-- 목차? 상위목록 표시 -->
 	<div style="text-align: right;  margin-right: 20px">
-		<a href="main" style="color:black; text-decoration: none;">Home</a> > <a href="Donate_detail" style="color:black; text-decoration: none;">기부내역</a>	
+		<a href="main" style="color:black; text-decoration: none;">Home</a> > <a href="DonateLike_Board" style="color:black; text-decoration: none;">문의 하기</a>	
 	</div>
 	<!-- 게시판 시작 -->
 	<div class="container" style="margin-top: 15px; z-index: -9999;" >
 		<div>
-			<h3 style="text-align: center;">후원 내역</h3>
+			<h3 style="text-align: center;">Q&A 목록</h3>
 		</div>
-			<input type="hidden" value="${sessionScope.SID}" name="Main_id"/>
+
 		<table class="table" id='target' style="z-index: -9999;">
 			<thead>
 				<tr>
-					<th>기부대상</th>
-					<th>은행</th>
-					<th>금액</th>
+					<th>글번호</th>
+					<th>글제목</th>
+					<th>작성자</th>
 					<th>날짜</th>
-					<th>ID</th>
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${list}" var="map">
+				<c:forEach items="${b_list}" var="map">
 					<tr>
+						<td>${map.B_NO}</td>
 						<td>
-							<c:choose>
-								<c:when test="${map.CATE_NO eq '1'}">국내 장애아동</c:when>
-								<c:when test="${map.CATE_NO eq '2'}">국내 위기아동</c:when>
-								<c:when test="${map.CATE_NO eq '3'}">국내 독거노인</c:when>
-								<c:when test="${map.CATE_NO eq '4'}">국내 수재민</c:when>
-							</c:choose>
+							<a class="title" href="board_detail?B_NO=${map.B_NO}" name="B_TITLE">${map.B_TITLE}</a>
 						</td>
-						<td>
-							<c:choose>
-								<c:when test="${map.AA_BANK eq 'sin'}">신한은행</c:when>
-								<c:when test="${map.AA_BANK eq 'kb'}">국민은행</c:when>
-								<c:when test="${map.AA_BANK eq 'ibk'}">기업은행</c:when>
-								<c:when test="${map.AA_BANK eq 'busan'}">부산은행</c:when>
-								<c:when test="${map.AA_BANK eq 'gyeongnam'}">경남은행</c:when>
-								<c:when test="${map.AA_BANK eq 'hana'}">하나은행</c:when>
-								<c:when test="${map.AA_BANK eq 'nh'}">농협</c:when>
-							</c:choose>
-						</td>
-						<td>${map.AA_DONATE}</td>
-						<td>${map.AA_DATE}</td>
 						<td>${map.DM_ID}</td>
+						<td>${map.B_DATE}</td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
+		<div>
+			<a href="DonateLike_Board_insert" class="btn btn-dark">글쓰기</a>
+		</div>
 	</div>
 	
 	<!-- 하단바 -->
-	<jsp:include page="bar/footer.jsp"></jsp:include>	
+	<jsp:include page="../bar/footer.jsp"></jsp:include>	
 </body>
 <script src='resources/js/jquery-3.3.1.min.js'></script>
 <script src="resources/js/popper.min.js"></script>

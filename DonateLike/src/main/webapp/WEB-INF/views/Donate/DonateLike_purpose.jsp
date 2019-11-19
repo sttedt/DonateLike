@@ -16,7 +16,7 @@
 </head>
 <body>
 	<!-- 상단바 -->
-	<jsp:include page="bar/topbar.jsp"></jsp:include>
+	<jsp:include page="../bar/topbar.jsp"></jsp:include>
 	
 	<!-- 목차? 상위목록 표시 -->
 	<div style="text-align: right;  margin-right: 20px">
@@ -31,7 +31,7 @@
 		<img src="resources/img/purpose.jpg">
 	</div>
 	<!-- 하단바 -->
-	<jsp:include page="bar/footer.jsp"></jsp:include>	
+	<jsp:include page="../bar/footer.jsp"></jsp:include>	
 </body>
 <script src='resources/js/jquery-3.3.1.min.js'></script>
 <script src="resources/js/popper.min.js"></script>
