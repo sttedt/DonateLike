@@ -7,8 +7,7 @@
 <meta charset="UTF-8">
 	<title>DonateLike</title>
 	<link rel="stylesheet" href="resources/css/bootstrap.css" />
-	<link rel="stylesheet" href="resources/css/donateLike.css" />
-	<link rel="stylesheet" href="resources/css/ui.intro.css" />
+	<link rel="stylesheet" href="resources/css/donateLike.css?var=1" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
 </head>
 <body>
@@ -62,7 +61,7 @@
 							<h3>MISSION</h3>
 						</div>
 						<div class="desc_img">
-							<img src=" " alt="Miral mission"/>
+							<img src="resources/img/img_mission.png " alt="Miral mission"/>
 							<p class="blind">
 								기독교　정신을 바탕으로
 								소외된 이웃과 더불어 살아가는
@@ -75,7 +74,7 @@
 							<h3>VISION</h3>
 						</div>
 						<div class="desc_img">
-							<img src="" alt="Miral Vision"/>
+							<img src="resources/img/img_vision.png" alt="Miral Vision"/>
 							<p class="blind">
 								생애주기별, 자립복지, 장애통합 : Glocal(Global + Local의 합성어) 모델구현
 							</p>
@@ -84,7 +83,7 @@
 				</div>
 				<div class="sec_spirit">
 					<div class="hd">
-						<h3>밀알정신</h3>
+						<h3 style="text-align: center;">기부니좋아 정신</h3>
 					</div>
 					<div class="spirit_list">
 						<ul style=" list-style:none;">
@@ -123,9 +122,6 @@
 				</div>
 				<div class="sec_ci">
 					<div class="cont_ci">
-						<div class="ci_area">
-							<img src="" alt="밀알복지재단" />
-						</div>
 						<div class="ci_info">
 							<ul style=" list-style:none;">
 								<li>

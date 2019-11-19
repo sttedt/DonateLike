@@ -136,5 +136,54 @@
 			color: black;
 		}
 	
+		/* 	기부니좋아 소개  */
 		
+		/************밀알복지재단은************/
+		.about_wrapper .hd p + p{padding-top:11px}
+		.sec_about_list{padding:36px 0 60px;width:1180px;margin:0 auto;}
+		.sec_about_list ul{overflow:hidden;margin-left:-20px;}
+		.sec_about_list ul li{float:left;width:33.3%;}
+		.sec_about_list ul li .item{margin-left:20px;}
+		.sec_about_list ul li strong{display:block;color:#000000;font-weight:normal;margin-top:15px;text-align:center;}
+		.sec_about_list ul li p{display:block;color:#666666;padding-top:4px;text-align:center;}
+		.sec_about_list ul li img{width:380px;height:214px;}
+		
+		.about_banner {height: 320px;background-image: url(../img/img_about_banner.jpg);background-position: 50% 50%;}
+		
+		
+		/*vision mission*/
+		.sec_vision{text-align:center;padding:60px 0;overflow:hidden;width:1180px;margin:0 auto;}
+		.sec_vision h3{font-family:font_roboto;font-weight:bold;}
+		.sec_vision .item{width:50%;float:left;}
+		.sec_vision .desc_img{text-align:center;margin-top:40px;}
+		
+		
+		/*밀알정신*/
+		.sec_spirit{background-color:#f9f9fa;padding:60px 0;}
+		.spirit_list{text-align:center;width:1180px;margin:0 auto;padding-top:32px;}
+		.spirit_list ul{overflow:hidden;}
+		.spirit_list ul li{float:left;width:20%;}
+		.spirit_list ul li .sp_about{display:inline-block;background-color:#ffffff;width:160px;height:160px;border-radius:50%;text-align:center;}
+		.spirit_list ul li .sp_about:after{content:'';background-image:url(../img/sp_about.png);background-repeat:no-repeat;vertical-align: top;display: inline-block;  overflow: hidden;font-size: 1px;line-height: 0;color: transparent;width:80px;height:80px;margin-top:38px}
+		.spirit_list ul li:nth-child(1) .sp_about:after{background-position:0 0;}
+		.spirit_list ul li:nth-child(2) .sp_about:after{background-position:-84px 0;}
+		.spirit_list ul li:nth-child(3) .sp_about:after{background-position:-168px 0;}
+		.spirit_list ul li:nth-child(4) .sp_about:after{background-position:-252px 0;}
+		.spirit_list ul li:nth-child(5) .sp_about:after{background-position:-336px 0;}
+		.spirit_list ul li strong{display:block;font-weight:normal;margin-top:18px;color:#000000;}
+		.spirit_list ul li p{display:block;padding-top:8px;letter-spacing: -0.06em;}
+		
+		/*CI소개*/
+		.sec_ci {padding-top:60px;margin:0 auto;width:1180px;}
+		.sec_ci .btns_wrapper{padding-top:38px;}
+		.sec_ci .ci_info{padding-top:37px;}
+		.sec_ci .ci_info ul{overflow:hidden;}
+		.sec_ci .ci_info ul li{float:left;padding-left:90px;position:relative;width:303px;}
+		.sec_ci .ci_info ul li + li:before{content:'';position:absolute;left:0;top:4px;width:1px;height:42px;background-color:#e9e9e9;}
+		.sec_ci .ci_info ul li .color{display:block;width:40px;height:40px;position:absolute;left:30px;top:4px;background-color:#00a040;}
+		.sec_ci .ci_info ul li strong{color:#000;font-weight:normal;display:block;}
+		.sec_ci .ci_info ul li p{color:#666666;}
+		.sec_ci .ci_info ul li + li .color{background-color:#e60012;}
+		.sec_ci .ci_info ul li + li + li .color{background-color:#fff;border:1px solid #dddddd;width:38px;height:38px;}
+				
 		
