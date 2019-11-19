@@ -148,6 +148,26 @@ public class MemberController {
 		System.out.println("email : " + email);
 		return "member/find_id";
 	}
+	// 비번 찾기 폼으로 가기
+	@RequestMapping(value = "find_pw_form", method = RequestMethod.GET)
+	// param은 map을 받는다
+	public String find_pw_form(Model model) {
+		return "member/find_pw_form";
+	}
+	// 비밀번호 찾기 아이디확인
+	@RequestMapping(value = "find_pw_form", method = RequestMethod.POST)
+	public String find_pw(HttpServletResponse response, @RequestParam("DM_ID") String DM_ID, Model md)
+			throws Exception {
+//		md.addAttribute("id", memberService.find_pw(response, DM_ID));
+		System.out.println("DM_ID : " + DM_ID);
+		return "redirect:/member/find_pw";
 		
+	}
+	// 페이지 받기
+	@RequestMapping(value = "find_pw", method = RequestMethod.GET)
+	// param은 map을 받는다
+	public String find_pw(Model model) {
+		return "find_pw";
+	}
 	
 }

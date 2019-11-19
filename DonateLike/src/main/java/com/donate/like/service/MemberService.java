@@ -53,6 +53,23 @@ public class MemberService {
 			return id;
 		}
 	}
+	// 비번찾기 아이디 확인
+//	public String find_pw(HttpServletResponse response, String id) throws Exception {
+//		response.setContentType("text/html;charset=utf-8");
+//		PrintWriter out = response.getWriter();
+//		String pw = memberDao.find_pw("");
+//
+//		if (pw == null) {
+//			out.println("<script>");
+//			out.println("alert('가입된 아이디가 없습니다.');");
+//			out.println("history.go(-1);");
+//			out.println("</script>");
+//			out.close();
+//			return null;
+//		} else {
+//			return "find_pw";
+//		}
+//	}
 
 }
 
