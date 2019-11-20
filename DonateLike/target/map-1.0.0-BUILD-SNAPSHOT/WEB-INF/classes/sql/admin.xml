@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="admin">
+	<select id="donateList" resultType="map">
+		SELECT CATE_NO, AA_BANK, AA_DONATE, AA_DATE, DM_ID  FROM DONATE_ACCOUNT ORDER BY AA_NO DESC
+	</select>
+	
+	<insert id="TargetSelectionInsert">
+		INSERT INTO TargetSelection (TS_CONTENT, CATE_NO, TS_IMG, TS_DETAIL_CONTENT)
+			VALUES (#{TS_content},#{CATE_NO}, #{img}, #{TS_detail_content})
+	</insert>
+	
+	<update id="TargetSelectionUpdate" parameterType="map">
+		UPDATE TargetSelection 
+			SET TS_CONTENT = #{TS_content}, TS_DETAIL_CONTENT = #{TS_detail_content}, 
+							CATE_NO =#{CATE_NO},
+							TS_IMG = #{img} 
+			WHERE TS_NO = #{TS_NO}
+	</update>
+	
+<!-- 	대상선정 삭제 -->
+	<delete id="TargetSelectionDelete" parameterType="map">
+		DELETE FROM TargetSelection 
+		WHERE TS_NO = #{TS_NO}
+	</delete>
+</mapper>

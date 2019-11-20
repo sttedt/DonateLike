@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="main">
+	<select id="DTSelectionList" resultType="map">
+		SELECT TS_CONTENT, CATE_NO, TS_IMG, TS_NO FROM targetselection 
+	</select>
+	
+	<select id="DTSelectionOne" resultType="map" parameterType="int">
+		SELECT TS_CONTENT, CATE_NO, TS_IMG, TS_NO, TS_DETAIL_CONTENT FROM targetselection WHERE TS_NO = #{TS_NO}
+	</select>
+</mapper>

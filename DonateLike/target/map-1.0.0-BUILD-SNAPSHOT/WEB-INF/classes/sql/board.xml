@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="board">
+	<!-- 게시판 목록 불러오기  -->
+	<select id="boardList" resultType="map">
+		SELECT * FROM DONATE_BOARD ORDER BY B_NO DESC
+	</select>
+	<!-- 게시글 DB 저장 -->
+	<insert id="boardInsert">
+		INSERT INTO donate_board (B_TITLE, B_CONTENT, B_DATE, DM_ID) 
+		VALUES(#{title},#{content},NOW(),#{dm_id})
+	</insert>
+	
+	<!-- 상세페이지 -->
+	<select id="boardOne" resultType="map" parameterType="_int">
+		SELECT * FROM donate_board
+		 WHERE B_NO = #{B_NO}
+	</select>
+		
+	<!-- 수정페이지 -->
+	<select id="board_update_ready" resultType="map" parameterType="_int">
+		SELECT * FROM donate_board
+		 WHERE B_NO = #{B_NO}
+	</select>
+	
+	<!-- 수정 정보 디비에 보내기 -->
+	<update id="boardUpdate" >
+		UPDATE donate_board 
+		SET B_TITLE=#{B_TITLE}, B_CONTENT=#{B_CONTENT}
+		WHERE B_NO=#{B_NO}
+	</update>	
+	
+	<!-- 게시글 삭제 -->
+	<delete id="boardDelete" parameterType="map" >
+		DELETE FROM donate_board 
+		WHERE B_NO=#{B_NO}
+	</delete>
+	
+	<!-- 리뷰쓰기 페이지 불러오기 -->
+	<select id="reviewOne" resultType="map" parameterType="_int">
+		SELECT * FROM donate_board
+		 WHERE B_NO = #{B_NO}
+	</select>
+	
+	<!-- 리뷰쓰기 디비 저장 -->
+	<insert id="reviewInsert">
+		INSERT INTO review (B_NO, DM_ID, RE_CONTENT, RE_DATE )
+		VALUES ( #{B_NO}, #{DM_ID}, #{RE_CONTENT}, NOW())
+	</insert>
+		
+	<!-- 리뷰 목록 -->
+	<select id="reviewList" resultType="map">
+		SELECT * FROM review
+		 WHERE B_NO = #{B_NO}
+		 ORDER BY RE_NO DESC
+	</select>
+	
+	<!-- 리뷰 수정 페이지 -->
+	<select id="getReview" resultType="map" parameterType="map">
+		SELECT DB.DM_ID DD_ID, RE.RE_NO RR_NO, RE.RE_CONTENT RR_CONTENT, RE.DM_ID RR_ID, DB.B_NO DD_NO 
+		   FROM DONATE_BOARD DB,
+		   (SELECT * FROM REVIEW WHERE RE_NO = #{RE_NO}) RE 
+		   WHERE DB.B_NO = RE.B_NO
+	</select>
+	
+	<update id="reviewUpdate" parameterType="map" >
+		UPDATE review 
+		SET RE_CONTENT=#{RE_CONTENT}
+		WHERE RE_NO=#{RE_NO}
+	</update>
+	<!-- 리뷰 삭제 -->
+	<delete id="reviewDelete" parameterType="map" >
+		DELETE FROM review 
+		WHERE RE_NO=#{RE_NO}
+	</delete>
+	
+	<select id="reviewDeleteBackURL" resultType="map" parameterType="map" >
+		SELECT B_NO FROM review WHERE RE_NO = #{RE_NO}
+	</select>
+	
+</mapper>
