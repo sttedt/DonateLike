@@ -4,7 +4,7 @@
 <mapper namespace="board">
 	<!-- 게시판 목록 불러오기  -->
 	<select id="boardList" resultType="map">
-		SELECT * FROM DONATE_BOARD ORDER BY B_NO DESC
+		SELECT * FROM donate_board ORDER BY B_NO DESC
 	</select>
 	<!-- 게시글 DB 저장 -->
 	<insert id="boardInsert">
@@ -59,7 +59,7 @@
 	<!-- 리뷰 수정 페이지 -->
 	<select id="getReview" resultType="map" parameterType="map">
 		SELECT DB.DM_ID DD_ID, RE.RE_NO RR_NO, RE.RE_CONTENT RR_CONTENT, RE.DM_ID RR_ID, DB.B_NO DD_NO 
-		   FROM DONATE_BOARD DB,
+		   FROM donate_board DB,
 		   (SELECT * FROM REVIEW WHERE RE_NO = #{RE_NO}) RE 
 		   WHERE DB.B_NO = RE.B_NO
 	</select>
