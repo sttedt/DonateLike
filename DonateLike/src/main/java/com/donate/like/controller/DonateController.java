@@ -63,4 +63,5 @@ public class DonateController {
 		
 		return "Donate/Donate_detail";
 	}
+	
 }
