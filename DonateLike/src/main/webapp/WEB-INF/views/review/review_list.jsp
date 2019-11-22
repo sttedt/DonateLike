@@ -28,7 +28,12 @@
 			<tbody>
 				<c:forEach items="${r_list}" var="map" varStatus="status">
 					<tr style="font-size: 12px;" >
-						<td rowspan="2">${map.DM_ID}</td>
+						<td rowspan="2">
+							<c:choose>
+								<c:when test="${map.DM_ID eq 'admin'}">관리자</c:when>
+								<c:otherwise>${map.DM_ID}</c:otherwise>
+							</c:choose>
+						</td>
 					
 						<td>작성시간 : ${map.RE_DATE}</td>
 						<td>
