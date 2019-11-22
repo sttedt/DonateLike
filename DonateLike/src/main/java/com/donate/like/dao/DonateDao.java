@@ -22,4 +22,9 @@ public class DonateDao {
 	public String donateApply(String TS_NO) {
 		return sessionTemplate.selectOne("donate.donateApply", TS_NO);
 	}
+	
+	public Map<String, Object> donateDetailOne(int AA_NO) {
+		return sessionTemplate.selectOne("donate.donateDetailOne", AA_NO);
+	}
+	
 }

@@ -19,7 +19,7 @@
 	<jsp:include page="../bar/topbar.jsp"></jsp:include>
 	<!-- 목차? 상위목록 표시 -->
 	<div style="text-align: right; margin-right: 20px">
-		<a href="main" style="color: black; text-decoration: none;">Home</a>
+		<a href="main" style="color: black; text-decoration: none;">Home</a> >
 		<a href="Donate_detail" style="color: black; text-decoration: none;">후원내역</a>
 	</div>
 	<!-- 게시판 시작 -->
@@ -28,10 +28,11 @@
 			<div>
 				<h3 style="text-align: center;">기부 영수증</h3>
 			</div>
+			<br>
 			<input type="hidden" value="${sessionScope.SID}" name="Main_id" />
-			
+
 			<div>
-				<h5 style="text-align: center;">기부자 인적사항</h5>
+				<h5 style="text-align: left;">기부자 인적사항</h5>
 			</div>
 
 
@@ -43,16 +44,17 @@
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach items="${list}" var="map">
-						<tr>
-							<td>${map.DM_NAME}</td>
-							<td>${map.DM_BIRTH}</td>
-						</tr>
-					</c:forEach>
+					<tr>
+						<td>${DDOne.DM_NAME}</td>
+						<td>${DDOne.DM_BIRTH}</td>
+					</tr>
 				</tbody>
 			</table>
-			
-				<table class="table" id='target' style="z-index: -9999;">
+			<br>
+			<div>
+				<h5 style="text-align: left;">기부자 지출내역</h5>
+			</div>
+			<table class="table" id='target' style="z-index: -9999;">
 				<thead>
 					<tr>
 						<th>기부대상</th>
@@ -63,35 +65,39 @@
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach items="${list}" var="map">
-						<tr>
-							<td><c:choose>
-									<c:when test="${map.CATE_NO eq '1'}">국내 장애아동</c:when>
-									<c:when test="${map.CATE_NO eq '2'}">국내 위기아동</c:when>
-									<c:when test="${map.CATE_NO eq '3'}">국내 독거노인</c:when>
-									<c:when test="${map.CATE_NO eq '4'}">국내 수재민</c:when>
-								</c:choose></td>
-							<td><c:choose>
-									<c:when test="${map.DONATE_SELECT eq 'Regular_support'}">정기후원</c:when>
-									<c:when test="${map.DONATE_SELECT eq 'Temporary_support'}">일시후원</c:when>
+					<tr>
+						<td>
+							<c:choose>
+								<c:when test="${DDOne.DA_CATE eq '1'}">국내 장애아동</c:when>
+								<c:when test="${DDOne.DA_CATE eq '2'}">국내 위기아동</c:when>
+								<c:when test="${DDOne.DA_CATE eq '3'}">국내 독거노인</c:when>
+								<c:when test="${DDOne.DA_CATE eq '4'}">국내 수재민</c:when>
+							</c:choose>
+						</td>
+						<td>
+							<c:choose>
+								<c:when test="${DDOne.DA_SELECT eq 'Regular_support'}">정기후원</c:when>
+								<c:when test="${DDOne.DA_SELECT eq 'Temporary_support'}">일시후원</c:when>
 
-								</c:choose></td>
-							<td><c:choose>
-									<c:when test="${map.AA_BANK eq 'sin'}">신한은행</c:when>
-									<c:when test="${map.AA_BANK eq 'kb'}">국민은행</c:when>
-									<c:when test="${map.AA_BANK eq 'ibk'}">기업은행</c:when>
-									<c:when test="${map.AA_BANK eq 'busan'}">부산은행</c:when>
-									<c:when test="${map.AA_BANK eq 'gyeongnam'}">경남은행</c:when>
-									<c:when test="${map.AA_BANK eq 'hana'}">하나은행</c:when>
-									<c:when test="${map.AA_BANK eq 'nh'}">농협</c:when>
-								</c:choose></td>
-							<td>${map.AA_DONATE}</td>
-							<td>${map.AA_DATE}</td>
-						</tr>
-					</c:forEach>
+							</c:choose>
+						</td>
+						<td>
+							<c:choose>
+								<c:when test="${DDOne.DA_BANK eq 'sin'}">신한은행</c:when>
+								<c:when test="${DDOne.DA_BANK eq 'kb'}">국민은행</c:when>
+								<c:when test="${DDOne.DA_BANK eq 'ibk'}">기업은행</c:when>
+								<c:when test="${DDOne.DA_BANK eq 'busan'}">부산은행</c:when>
+								<c:when test="${DDOne.DA_BANK eq 'gyeongnam'}">경남은행</c:when>
+								<c:when test="${DDOne.DA_BANK eq 'hana'}">하나은행</c:when>
+								<c:when test="${DDOne.DA_BANK eq 'nh'}">농협</c:when>
+							</c:choose>
+						</td>
+						<td>${DDOne.DA_DONATE}</td>
+						<td>${DDOne.DA_DATE}</td>
+					</tr>
 				</tbody>
 			</table>
-			
+
 		</div>
 	</div>
 
@@ -108,14 +114,4 @@
 	crossorigin="anonymous"></script>
 <script
 	src='https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js'></script>
-<script>
-	$('#target').DataTable({
-		order : [ [ 0, 'desc' ] ],
-		ordering : true,
-		serverSide : false
-	})
 
-	$(document).ready(function() {
-		$('#target').DataTable()
-	})
-</script>
