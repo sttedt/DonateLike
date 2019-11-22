@@ -68,7 +68,7 @@
 						</td>
 						<td>${map.AA_DONATE}</td>
 						<td>${map.AA_DATE}</td>
-						<td><a href="review_update?RE_NO=${map.RE_NO}" class="btn btn-dark" >기부영수증</a></td>
+						<td><a href="Donate_detail_one?AA_NO=${map.AA_NO}" class="btn btn-dark" >기부영수증</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
