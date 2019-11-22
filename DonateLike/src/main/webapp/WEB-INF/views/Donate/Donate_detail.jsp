@@ -45,6 +45,7 @@
 								<c:when test="${map.CATE_NO eq '3'}">국내 독거노인</c:when>
 								<c:when test="${map.CATE_NO eq '4'}">국내 수재민</c:when>
 							</c:choose>
+							
 						</td>
 						<td>
 							<c:choose>
