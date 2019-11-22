@@ -60,7 +60,7 @@
 	<select id="getReview" resultType="map" parameterType="map">
 		SELECT DB.DM_ID DD_ID, RE.RE_NO RR_NO, RE.RE_CONTENT RR_CONTENT, RE.DM_ID RR_ID, DB.B_NO DD_NO 
 		   FROM donate_board DB,
-		   (SELECT * FROM REVIEW WHERE RE_NO = #{RE_NO}) RE 
+		   (SELECT * FROM review WHERE RE_NO = #{RE_NO}) RE 
 		   WHERE DB.B_NO = RE.B_NO
 	</select>
 	
