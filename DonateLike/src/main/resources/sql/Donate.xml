@@ -8,7 +8,7 @@
 	</insert>
 	
 	<select id="donateList" resultType="map">
-		SELECT CATE_NO, AA_BANK, AA_DONATE, AA_DATE FROM donate_account WHERE DM_ID = #{no} ORDER BY AA_NO DESC
+		SELECT CATE_NO, AA_BANK, AA_DONATE, AA_DATE, DONATE_SELECT FROM donate_account WHERE DM_ID = #{no} ORDER BY AA_NO DESC
 	</select>
 	
 	<select id="donateApply" resultType="String">

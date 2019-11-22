@@ -30,9 +30,11 @@
 			<thead>
 				<tr>
 					<th>기부대상</th>
+					<th>후원종류</th>
 					<th>은행</th>
 					<th>금액</th>
 					<th>날짜</th>
+					<th>기부영수증</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -45,7 +47,13 @@
 								<c:when test="${map.CATE_NO eq '3'}">국내 독거노인</c:when>
 								<c:when test="${map.CATE_NO eq '4'}">국내 수재민</c:when>
 							</c:choose>
-							
+						</td>
+						<td>
+							<c:choose>
+								<c:when test="${map.DONATE_SELECT eq 'Regular_support'}">정기후원</c:when>
+								<c:when test="${map.DONATE_SELECT eq 'Temporary_support'}">일시후원</c:when>
+						
+							</c:choose>
 						</td>
 						<td>
 							<c:choose>
@@ -60,6 +68,7 @@
 						</td>
 						<td>${map.AA_DONATE}</td>
 						<td>${map.AA_DATE}</td>
+						<td><a href="review_update?RE_NO=${map.RE_NO}" class="btn btn-dark" >기부영수증</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
