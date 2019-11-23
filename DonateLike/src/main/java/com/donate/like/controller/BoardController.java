@@ -6,6 +6,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.sound.midi.Soundbank;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.donate.like.service.BoardService;
 
@@ -26,7 +28,7 @@ public class BoardController {
 	public String list(Model model) {
 		model.addAttribute("b_list", boardService.boardList());
 		
-		return "DonateLike_Board";
+		return "board/DonateLike_Board";
 	}
 	// 게시글 쓰기
 	@RequestMapping(value="DonateLike_Board_insert", method = RequestMethod.GET)
@@ -37,9 +39,9 @@ public class BoardController {
 			request.setAttribute("type", "error");
 			request.setAttribute("msg", "로그인이 필요합니다");
 			request.setAttribute("url", "login");
-			return "alert";
+			return "bar/alert";
 		}
-		return "DonateLike_Board_insert";
+		return "board/DonateLike_Board_insert";
 	}
 	
 	// 게시글 데이터베이스 저장
@@ -57,7 +59,9 @@ public class BoardController {
 		model.addAttribute("detail", boardService.boardOne(B_NO));
 		List<Map<String, Object>> rList = boardService.reviewList(B_NO);
 		model.addAttribute("r_list", rList);
-		return "board_detail";
+		System.out.println("rlist:"+ rList);
+		System.out.println("B_NO : " + B_NO);
+		return "board/board_detail";
 	}
 		
 	// 게시글 수정페이지
@@ -70,10 +74,11 @@ public class BoardController {
 			request.setAttribute("type", "error");
 			request.setAttribute("msg", "로그인이 필요합니다");
 			request.setAttribute("url", "login");
-			return "alert";
+			return "bar/alert";
 		}
-		return "board_update";
+		return "board/board_update";
 	}
+	
 	
 	// 게시글 수정 후 디비에 보내는 코드
 	@RequestMapping(value="board_update_ready", method = RequestMethod.POST)
@@ -99,7 +104,7 @@ public class BoardController {
 			request.setAttribute("type", "error");
 			request.setAttribute("msg", "로그인이 필요합니다");
 			request.setAttribute("url", "login");
-			return "alert";
+			return "bar/alert";
 		}
 		return "redirect:/DonateLike_Board";
 		// 주소가 boardd?Brd_NO=815 에서 결과값이 board의 주소창으로 된다
@@ -114,16 +119,53 @@ public class BoardController {
 		System.out.println("no : " + no);
 		model.addAttribute("detail", boardService.reviewOne(B_NO));
 		
-		return "review_write";
+		return "review/review_write";
 	}
 	
 	// 리뷰 데이터를 디비에 보내기
 	@RequestMapping(value="review_write", method = RequestMethod.POST)
-	public String re(@RequestParam Map<String, Object> map,@RequestParam("B_NO") int B_NO){
+	public String re(@RequestParam Map<String, Object> map, @RequestParam("B_NO") int B_NO){
 		map.put("B_NO", B_NO);
-		System.out.println(" map :" + map);
 		boardService.reviewInsert(map);
 		return "redirect:/board_detail?B_NO="+B_NO;
 	}
+	
+	// 리뷰 수정
+	@RequestMapping(value="review_update", method = RequestMethod.GET)
+	public String reviewu_get(Model model, @RequestParam Map<String, Object> map
+			, HttpSession httpSession, HttpServletRequest request) {
+		Map<String, Object> tmp = boardService.getReview(map);
+
+		System.out.println("map :"+map);
+		System.out.println("tmp:"+tmp);
+		model.addAttribute("data", tmp);
+		return "review/review_update";
+	}
+	
+	// 리뷰 수정데이터디비 보내기
+	@RequestMapping(value="review_update", method = RequestMethod.POST)
+	public String reviewu_post( @RequestParam Map<String, Object> map, @RequestParam("B_NO") int B_NO) {
+		
+		System.out.println("GGGmap : " + map);
+		System.out.println("BNO : " + B_NO);
+		
+		boardService.reviewUpdate(map);
+		
+		return "redirect:/board_detail?B_NO="+B_NO;
+	}
+	// 리뷰 삭제
+	@RequestMapping(value="reviewd", method = RequestMethod.GET)
+	public String reviewd_get(Model model, HttpSession httpSession, 
+				HttpServletRequest request, @RequestParam Map<String, Object> map) throws Exception {
+
+		// B_NO 를 바로 받아올수 없기 때문에 기존 디비에 있는 RE_NO를 이용해서 B_NO를 조회후 입력 
+		Map<String, Object> a = boardService.reviewDeleteBackURL(map);
+		// map 으로 받았기 때문에 int로 형변환
+		int B_NO = (int) a.get("B_NO");
+		// 리뷰 데이터 삭제
+		boardService.reviewDelete(map);
+		return "redirect:/board_detail?B_NO=" + B_NO;
+	}
+	
 
 }

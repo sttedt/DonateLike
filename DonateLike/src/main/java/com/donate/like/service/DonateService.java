@@ -22,7 +22,9 @@ public class DonateService {
 	public String donateApply(String TS_NO) {
 		return donateDao.donateApply(TS_NO);
 	}
-
-
+	
+	public Map<String, Object> donateDetailOne(int AA_NO) {
+		return donateDao.donateDetailOne(AA_NO);
+	}
 
 }

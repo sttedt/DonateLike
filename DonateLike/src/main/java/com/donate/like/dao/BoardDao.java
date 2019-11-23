@@ -47,5 +47,18 @@ public class BoardDao {
 	public List<Map<String, Object>> reviewList(int B_NO) {
 		return sessionTemplate.selectList("board.reviewList", B_NO);
 	}
+	// 리뷰 수정페이지
+	public Map<String, Object> getReview(Map<String, Object> map) {
+		return sessionTemplate.selectOne("board.getReview", map);
+	}
+	public void reviewUpdate(Map<String, Object> map) {
+		sessionTemplate.update("board.reviewUpdate",map);
+	}
+	public void reviewDelete(Map<String, Object> map) {
+		sessionTemplate.delete("board.reviewDelete",map);
+	}
+	public Map<String, Object> reviewDeleteBackURL( Map<String, Object> map) {
+		return sessionTemplate.selectOne("board.reviewDeleteBackURL", map);
+}
 	
 }

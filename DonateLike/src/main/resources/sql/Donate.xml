@@ -8,11 +8,20 @@
 	</insert>
 	
 	<select id="donateList" resultType="map">
-		SELECT CATE_NO, AA_BANK, AA_DONATE, AA_DATE FROM DONATE_ACCOUNT WHERE DM_ID = #{no} ORDER BY AA_NO DESC
+		SELECT CATE_NO, AA_BANK, AA_DONATE, AA_DATE, DONATE_SELECT, AA_NO FROM donate_account WHERE DM_ID = #{no} ORDER BY AA_NO DESC
 	</select>
 	
 	<select id="donateApply" resultType="String">
 		SELECT CATE_NO FROM TARGETSELECTION WHERE TS_NO = #{TS_no} 
+	</select>
+	
+	<select id="donateDetailOne" resultType="map">
+		SELECT * FROM 
+	(SELECT AA_NO DA_NO, AA_ACCOUNT DA_ACCOUNT, AA_BANK DA_BANK, 
+				AA_DONATE DA_DONATE, DONATE_SELECT DA_SELECT, 
+				DM_ID DA_ID, CATE_NO DA_CATE, AA_DATE DA_DATE 
+	FROM donate_account) DA, (SELECT DM_ID, DM_NAME, DM_BIRTH FROM donate_member) DM
+	WHERE DA.DA_ID = DM.DM_ID AND DA.DA_NO = #{AA_NO}
 	</select>
 	
 </mapper>

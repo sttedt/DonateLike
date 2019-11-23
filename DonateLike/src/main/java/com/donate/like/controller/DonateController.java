@@ -36,7 +36,7 @@ public class DonateController {
 			request.setAttribute("url", "login");
 			return "bar/alert";
 		}
-		return "Donate_apply";
+		return "Donate/Donate_apply";
 	}
 	// 후원하기 페이지 내용 DB 저장
 	@RequestMapping(value = "/Donate_apply", method = RequestMethod.POST)
@@ -47,10 +47,11 @@ public class DonateController {
 		donateService.donateInsert(map);
 		return "redirect:Donate_detail";
 	}
-	//기부 상세 내역
+	//기부 상세 내역 List
 	@RequestMapping(value="Donate_detail", method = RequestMethod.GET)
 	public String list(Model model, HttpSession httpSession, @RequestParam Map<String, Object> map, HttpServletRequest request) {
 		String no = (String) httpSession.getAttribute("SID");
+		System.out.println("ID : " + no);
 		if(no==null) {
 			request.setAttribute("type", "error");
 			request.setAttribute("msg", "로그인이 필요합니다");
@@ -60,6 +61,23 @@ public class DonateController {
 		List<Map<String, Object>> dList = donateService.donateList(no);
 		model.addAttribute("list", dList);
 		
-		return "Donate_detail";
+		return "Donate/Donate_detail";
 	}
+	
+	@RequestMapping(value="/Donate_detail_one", method = RequestMethod.GET)
+	public String Donate_detail_one(Model model, HttpSession httpSession, @RequestParam Map<String, Object> map, HttpServletRequest request, @RequestParam("AA_NO") int AA_NO) {
+		String no = (String) httpSession.getAttribute("SID");
+		if(no==null) {
+			request.setAttribute("type", "error");
+			request.setAttribute("msg", "로그인이 필요합니다");
+			request.setAttribute("url", "login");
+			return "bar/alert";
+		}
+		Map<String, Object> DonateDetailOne = donateService.donateDetailOne(AA_NO);
+		System.out.println("DonateDetailOne : " + DonateDetailOne);
+		model.addAttribute("DDOne", DonateDetailOne);
+		
+		return "Donate/Donate_detail_one";
+	}
+	
 }
