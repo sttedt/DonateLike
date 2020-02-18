@@ -9,7 +9,7 @@
 
 ## 개발 환경 
 - 개발언어   : java
-- 프레임워크   : Spring MVC 프로젝트 
+- **프레임워크   : Spring MVC 프로젝트** 
 - 개발 툴    : sts
 - 라이브러리   : bootstrap 4
 - server       : apache Tomcat 8.5
