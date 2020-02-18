@@ -1,5 +1,5 @@
 # DonateLike
-#### 팀프로젝트 < 기부니 좋아 > 기부사이트 제작
+#### - 팀프로젝트 < 기부니 좋아 > 기부사이트 제작
 
 
 
@@ -35,4 +35,4 @@
 
 
 ## 링크
-웹호스팅 : http://sttedt.cafe24.com/main
+- 웹호스팅 : http://sttedt.cafe24.com/main
